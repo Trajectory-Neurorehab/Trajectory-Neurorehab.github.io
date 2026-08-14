@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#101c1a" media="(prefers-color-scheme: dark)">
+<title>Share Your Feedback — Trajectory Neurorehabilitation</title>
+<meta name="description" content="A two-minute feedback form for patients of Dr. Amisha Ghorpade, neurological physiotherapist in Pune.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+<script>
+(function(){
+  try{
+    var t = localStorage.getItem('trj_theme');
+    if (t !== 'dark' && t !== 'light'){
+      t = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    document.documentElement.setAttribute('data-theme', t);
+  }catch(e){}
+})();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --ink:#14302a; --ink-soft:#4b615c; --ink-faint:#5f7570;
+  --accent:#2f7d6f; --accent-strong:#1f5b50; --accent-ink:#1b5449;
+  --accent-soft:#eaf4f1; --accent-line:#bcdcd3; --gold:#8c611f;
+  --bg:#f5faf8; --surface:#ffffff; --surface-2:#ffffff;
+  --line:#dce8e4; --line-soft:#e8f0ed;
+  --danger:#a8352b; --danger-bg:#fdf1f0; --danger-line:#f3d5d1;
+  --btn-ink:#ffffff;
+  --shadow-sm:0 1px 2px rgba(20,48,42,.05);
+  --shadow-md:0 10px 30px rgba(20,48,42,.08);
+  --radius:16px;
+}
+[data-theme="dark"]{
+  --ink:#f1f7f5; --ink-soft:#c2d3cd; --ink-faint:#97aca6;
+  --accent:#5cc0aa; --accent-strong:#8adcc8; --accent-ink:#8adcc8;
+  --accent-soft:#17322c; --accent-line:#33594f; --gold:#e2b66d;
+  --bg:#101c1a; --surface:#1b2c28; --surface-2:#213430;
+  --line:#2f443d; --line-soft:#253833;
+  --danger:#ff9d92; --danger-bg:#2a1613; --danger-line:#4a251f;
+  --btn-ink:#04100d;
+  --shadow-sm:0 1px 2px rgba(0,0,0,.4);
+  --shadow-md:0 10px 30px rgba(0,0,0,.45);
+}
+@media (prefers-color-scheme: dark){
+  html:not([data-theme]){
+    --ink:#f1f7f5; --ink-soft:#c2d3cd; --ink-faint:#97aca6;
+    --accent:#5cc0aa; --accent-strong:#8adcc8; --accent-ink:#8adcc8;
+    --accent-soft:#17322c; --accent-line:#33594f; --gold:#e2b66d;
+    --bg:#101c1a; --surface:#1b2c28; --surface-2:#213430;
+    --line:#2f443d; --line-soft:#253833;
+    --danger:#ff9d92; --danger-bg:#2a1613; --danger-line:#4a251f;
+    --btn-ink:#04100d;
+  }
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,
+              "Noto Sans Devanagari","Nirmala UI",Mangal,"Helvetica Neue",Arial,sans-serif;
+  color:var(--ink);background:var(--bg);line-height:1.65;font-size:16.5px;
+  -webkit-font-smoothing:antialiased;
+  min-height:100vh;display:flex;flex-direction:column;
+  transition:background-color .25s ease,color .25s ease;
+}
+[data-theme="dark"] body,
+html:not([data-theme]) body{-webkit-font-smoothing:auto;-moz-osx-font-smoothing:auto}
+@media (prefers-color-scheme: light){
+  html:not([data-theme]) body{-webkit-font-smoothing:antialiased}
+}
+a{color:var(--accent-ink)}
+h1,h2,.done h2{font-family:"Source Serif 4",Georgia,serif;font-weight:600}
+body.mr h1,body.mr h2{font-family:"Noto Sans Devanagari",Inter,sans-serif;font-weight:600;line-height:1.42}
+body.mr{line-height:1.85}
+:focus-visible{outline:2.5px solid var(--accent);outline-offset:3px;border-radius:4px}
+
+/* ---------- TOP BAR + PROGRESS ---------- */
+.topbar{
+  background:var(--surface);border-bottom:1px solid var(--line);
+  padding:13px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;
+}
+.topbar .brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink)}
+.topbar .brand svg.mark{width:35px;height:35px;color:var(--accent);flex-shrink:0}
+.topbar .who{display:flex;flex-direction:column;line-height:1.2}
+.topbar .who b{font-size:.97rem;font-family:"Source Serif 4",Georgia,serif}
+.topbar .who span{font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);font-weight:600}
+.tools{display:flex;align-items:center;gap:8px}
+.icon-btn{
+  width:36px;height:36px;border-radius:10px;cursor:pointer;
+  background:var(--surface);border:1px solid var(--line);color:var(--ink-soft);
+  display:inline-flex;align-items:center;justify-content:center;font:inherit;
+  transition:background-color .18s,border-color .18s,color .18s;
+}
+.icon-btn:hover{background:var(--accent-soft);border-color:var(--accent-line);color:var(--accent-ink)}
+.icon-btn svg{width:17px;height:17px}
+#langBtn{width:auto;padding:0 12px;font-size:.8rem;font-weight:600;white-space:nowrap}
+[data-theme="dark"] .icon-sun{display:block}
+[data-theme="dark"] .icon-moon{display:none}
+.icon-sun{display:none}
+.icon-moon{display:block}
+.home{font-size:.84rem;text-decoration:none;color:var(--ink-faint);white-space:nowrap}
+.home:hover{color:var(--accent-ink)}
+
+.progress-wrap{background:var(--surface);padding:0 20px 13px;border-bottom:1px solid var(--line)}
+.progress-meta{
+  display:flex;justify-content:space-between;font-size:.75rem;
+  color:var(--ink-faint);margin-bottom:7px;letter-spacing:.02em;
+}
+.progress-track{height:5px;background:var(--line);border-radius:999px;overflow:hidden}
+.progress-fill{
+  height:100%;width:0%;background:var(--accent);border-radius:999px;
+  transition:width .35s cubic-bezier(.4,0,.2,1);
+}
+
+/* ---------- STAGE ---------- */
+main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:38px 20px 130px}
+.stage{width:100%;max-width:620px}
+
+.step{display:none;animation:slideIn .32s ease}
+.step.active{display:block}
+@keyframes slideIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+
+.q-num{
+  font-size:.73rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--accent-ink);margin-bottom:11px;
+}
+.q{font-size:1.6rem;line-height:1.25;letter-spacing:-.5px;margin-bottom:9px}
+.q .opt{font-weight:400;color:var(--ink-faint);font-size:1rem;letter-spacing:0;font-family:Inter,sans-serif}
+.help{color:var(--ink-soft);font-size:.94rem;margin-bottom:28px}
+
+/* ---------- STAR RATING ---------- */
+.stars{display:flex;gap:9px;margin-bottom:8px}
+.star{
+  flex:1;aspect-ratio:1;max-width:78px;
+  border:1.5px solid var(--line);background:var(--surface);border-radius:13px;
+  font-size:1.85rem;line-height:1;color:var(--line);
+  cursor:pointer;transition:.16s;
+  display:flex;align-items:center;justify-content:center;
+}
+.star:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
+.star.lit{background:var(--accent-soft);border-color:var(--gold);color:var(--gold)}
+.rating-label{
+  font-size:.88rem;color:var(--ink-faint);min-height:26px;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.rating-label b{color:var(--ink)}
+.sub-rate .lbl{font-weight:600;margin-bottom:10px;font-size:.98rem}
+
+/* ---------- CHOICE BUTTONS ---------- */
+.choices{display:flex;flex-direction:column;gap:11px}
+.choice{
+  display:flex;align-items:center;gap:15px;
+  background:var(--surface);border:1.5px solid var(--line);border-radius:13px;
+  padding:16px 19px;cursor:pointer;transition:.16s;
+  font:inherit;font-size:1rem;text-align:left;width:100%;color:var(--ink);
+}
+.choice:hover{border-color:var(--accent);background:var(--accent-soft)}
+.choice.sel{border-color:var(--accent);background:var(--accent-soft);font-weight:600}
+.choice .key{
+  width:27px;height:27px;flex-shrink:0;border-radius:8px;
+  background:var(--bg);border:1px solid var(--line);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.75rem;font-weight:700;color:var(--ink-faint);
+}
+.choice.sel .key{background:var(--accent);color:var(--btn-ink);border-color:var(--accent)}
+.choice .sub{display:block;font-size:.83rem;color:var(--ink-soft);font-weight:400;margin-top:2px}
+
+/* ---------- INPUTS ---------- */
+label.fl{display:block;font-weight:600;font-size:.92rem;margin-bottom:8px}
+label.fl .opt{font-weight:400;color:var(--ink-faint)}
+input[type=text],textarea{
+  width:100%;background:var(--surface);border:1.5px solid var(--line);border-radius:13px;
+  padding:15px 17px;font:inherit;font-size:1rem;color:var(--ink);transition:.16s;
+}
+input[type=text]::placeholder,textarea::placeholder{color:var(--ink-faint);opacity:.85}
+input[type=text]:focus,textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+textarea{min-height:155px;resize:vertical;line-height:1.65}
+.counter{font-size:.78rem;color:var(--ink-faint);text-align:right;margin-top:8px}
+.field{margin-bottom:18px}
+
+.err{
+  color:var(--danger);font-size:.88rem;margin-top:14px;display:none;
+  background:var(--danger-bg);border:1px solid var(--danger-line);border-radius:10px;padding:11px 14px;
+}
+.err.show{display:block}
+
+/* ---------- PROMPT PANEL ---------- */
+.prompts{
+  background:var(--surface);border:1px dashed var(--accent-line);border-radius:13px;
+  padding:17px 20px;margin-bottom:22px;
+}
+.prompts b{font-size:.73rem;letter-spacing:.11em;text-transform:uppercase;color:var(--accent-ink);display:block;margin-bottom:10px}
+.prompts ul{list-style:none;font-size:.9rem;color:var(--ink-soft)}
+.prompts li{padding:3px 0 3px 17px;position:relative}
+.prompts li::before{content:"";position:absolute;left:0;top:.85em;width:6px;height:6px;border-radius:50%;background:var(--accent);opacity:.55}
+
+/* ---------- NAV FOOTER ---------- */
+.navbar{
+  position:fixed;bottom:0;left:0;right:0;background:var(--surface);
+  border-top:1px solid var(--line);padding:14px 20px 10px;
+  display:flex;flex-direction:column;align-items:center;
+  box-shadow:0 -3px 18px rgba(0,0,0,.06);
+}
+.navbar .inner{width:100%;max-width:620px;display:flex;gap:12px;align-items:center}
+.btn{
+  border:1.5px solid var(--accent);border-radius:999px;padding:14px 30px;font:inherit;font-size:1rem;
+  font-weight:600;cursor:pointer;transition:.18s;text-decoration:none;
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  background:var(--accent);color:var(--btn-ink);
+}
+.btn:hover{background:var(--accent-strong);border-color:var(--accent-strong)}
+.btn svg{width:18px;height:18px}
+.btn-primary{flex:1}
+.btn-back{background:transparent;color:var(--ink-soft);border-color:var(--line);padding:14px 22px}
+.btn-back:hover{background:transparent;border-color:var(--ink-faint);color:var(--ink)}
+/* WhatsApp's #25D366 with white text is 1.98:1 and unreadable.
+   This is their darker brand green: 7.7:1. */
+.btn-wa{background:#075E54;border-color:#075E54;color:#fff}
+.btn-wa:hover{background:#054d45;border-color:#054d45}
+.btn-skip{background:none;border:none;color:var(--ink-faint);font-size:.88rem;text-decoration:underline;cursor:pointer;padding:14px 8px;font-family:inherit}
+.btn-skip:hover{color:var(--ink)}
+.hint{font-size:.74rem;color:var(--ink-faint);text-align:center;margin-top:9px}
+.hint kbd{
+  background:var(--bg);border:1px solid var(--line);border-radius:4px;
+  padding:1px 6px;font-size:.72rem;font-family:inherit;
+}
+
+/* ---------- REVIEW & SEND ---------- */
+.summary{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:8px 24px;margin-bottom:22px;
+}
+.summary .row{padding:14px 0;border-bottom:1px solid var(--line-soft)}
+.summary .row:last-child{border-bottom:none}
+.summary .row b{
+  display:block;font-size:.71rem;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--ink-faint);margin-bottom:3px;font-weight:700;
+}
+.summary .row span{font-size:.97rem}
+.summary .row .stars-out{color:var(--gold);letter-spacing:2px}
+.summary .edit{
+  background:none;border:none;color:var(--accent-ink);font-size:.8rem;
+  cursor:pointer;text-decoration:underline;padding:0;margin-left:9px;font-family:inherit;
+}
+.callout{
+  background:var(--accent-soft);border:1px solid var(--accent-line);
+  border-radius:13px;padding:17px 20px;font-size:.9rem;
+  color:var(--ink-soft);margin-bottom:20px;
+}
+.callout b{color:var(--ink)}
+.privacy{
+  display:flex;gap:11px;align-items:flex-start;
+  font-size:.84rem;color:var(--ink-faint);margin-top:18px;
+}
+.privacy svg{width:16px;height:16px;flex-shrink:0;margin-top:3px;color:var(--accent)}
+
+/* ---------- DONE ---------- */
+.done{text-align:center;padding:22px 0}
+.done .tick{
+  width:70px;height:70px;border-radius:50%;background:var(--accent);
+  color:var(--btn-ink);display:flex;align-items:center;justify-content:center;
+  margin:0 auto 24px;
+}
+.done .tick svg{width:32px;height:32px}
+.done h2{font-size:1.6rem;margin-bottom:11px;letter-spacing:-.5px}
+.done p{color:var(--ink-soft);max-width:46ch;margin:0 auto 14px}
+.fallback{
+  margin-top:28px;background:var(--surface);border:1px solid var(--line);
+  border-radius:13px;padding:22px;text-align:left;
+}
+.fallback b{display:block;margin-bottom:6px;font-size:.95rem}
+.fallback p{font-size:.86rem;margin-bottom:14px;max-width:none}
+#copyBox{
+  width:100%;min-height:140px;font-size:.82rem;
+  font-family:ui-monospace,Menlo,Consolas,monospace;background:var(--bg);
+}
+
+@media (max-width:560px){
+  .q{font-size:1.3rem}
+  main{padding:28px 18px 140px}
+  .star{font-size:1.55rem;border-radius:11px}
+  .hint{display:none}
+  .btn{padding:15px 22px;font-size:.95rem}
+  .topbar .who span{display:none}
+  .home{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== TOP BAR ===================== -->
+<div class="topbar">
+  <a class="brand" href="index.html">
+    <svg class="mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="33.9" cy="14.9" r="8.8" stroke="currentColor" stroke-width="1.5" opacity=".3"/>
+        <path d="M7.9 39.4C15.4 39.4 24.9 34.9 33.9 14.9" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
+        <circle cx="7.9" cy="39.4" r="2.5" fill="currentColor" opacity=".55"/>
+        <circle cx="20.3" cy="34.6" r="3.1" fill="currentColor" opacity=".8"/>
+        <circle cx="33.9" cy="14.9" r="5.2" fill="currentColor"/>
+      </svg>
+    <span class="who">
+      <b>Dr. Amisha Ghorpade (PT)</b>
+      <span data-i18n="brandSub">Patient Feedback</span>
+    </span>
+  </a>
+  <div class="tools">
+    <a class="home" href="index.html" data-i18n="backSite">&larr; Back to site</a>
+    <button type="button" class="icon-btn" id="themeBtn" aria-label="Switch to dark mode" title="Dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.3A8.5 8.5 0 0 1 9.7 3.5a8.5 8.5 0 1 0 10.8 10.8Z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M4.3 4.3l1.6 1.6M18.1 18.1l1.6 1.6M2.6 12h2.2M19.2 12h2.2M4.3 19.7l1.6-1.6M18.1 5.9l1.6-1.6"/></svg>
+    </button>
+    <button type="button" class="icon-btn" id="langBtn">मराठी</button>
+  </div>
+</div>
+
+<div class="progress-wrap">
+  <div class="progress-meta">
+    <span id="pStep">Getting started</span>
+    <span id="pPct">2 minutes</span>
+  </div>
+  <div class="progress-track"><div class="progress-fill" id="pFill"></div></div>
+</div>
+
+<main>
+<div class="stage">
+
+  <!-- ============ 0 · WELCOME ============ -->
+  <section class="step active" data-type="info">
+    <div class="q-num" data-i18n="w_num">Thank you for helping</div>
+    <h1 class="q" data-i18n="w_q">How was your physiotherapy?</h1>
+    <p class="help" data-i18n="w_help">
+      Six short questions, about two minutes. Most are one tap.<br><br>
+      Nothing is stored on this page and nothing is sent automatically. At the end
+      you'll see everything you wrote, and you decide whether to send it to
+      Dr. Amisha on WhatsApp.
+    </p>
+    <div class="prompts">
+      <b data-i18n="w_ph">Why it helps</b>
+      <ul data-i18n="w_pl">
+        <li>Other families in Pune use these reviews to decide on home physiotherapy</li>
+        <li>It tells Dr. Amisha what is working and what to change</li>
+        <li>Nothing is published without your explicit permission</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 1 · OVERALL RATING ============ -->
+  <section class="step" data-type="rating" data-key="overall" data-required="1">
+    <div class="q-num" data-i18n="q1_num">Question 1 of 6</div>
+    <h2 class="q" data-i18n="q1_q">Overall, how would you rate your experience?</h2>
+    <p class="help" data-i18n="q1_help">Tap a star. One is poor, five is excellent.</p>
+    <div class="stars" role="group" aria-label="Overall rating">
+      <button type="button" class="star" data-v="1" aria-label="1 star">★</button>
+      <button type="button" class="star" data-v="2" aria-label="2 stars">★</button>
+      <button type="button" class="star" data-v="3" aria-label="3 stars">★</button>
+      <button type="button" class="star" data-v="4" aria-label="4 stars">★</button>
+      <button type="button" class="star" data-v="5" aria-label="5 stars">★</button>
+    </div>
+    <div class="rating-label"><span data-i18n="poor">Poor</span><b class="rl"></b><span data-i18n="excellent">Excellent</span></div>
+    <div class="err" data-i18n="err_star">Please tap a star to continue.</div>
+  </section>
+
+  <!-- ============ 2 · IMPROVEMENT ============ -->
+  <section class="step" data-type="choice" data-key="improve" data-required="1">
+    <div class="q-num" data-i18n="q2_num">Question 2 of 6</div>
+    <h2 class="q" data-i18n="q2_q">Did the treatment improve the problem you came with?</h2>
+    <p class="help" data-i18n="q2_help">Please be honest. An accurate answer is more use than a kind one.</p>
+    <div class="choices">
+      <button type="button" class="choice" data-v="Yes, a big improvement" data-v-mr="हो, खूप फरक पडला"><span class="key">1</span><span data-i18n="q2_o1">Yes, a big improvement</span></button>
+      <button type="button" class="choice" data-v="Yes, some improvement" data-v-mr="हो, थोडा फरक पडला"><span class="key">2</span><span data-i18n="q2_o2">Yes, some improvement</span></button>
+      <button type="button" class="choice" data-v="Too early to tell" data-v-mr="अजून सांगणं घाईचं होईल"><span class="key">3</span><span data-i18n="q2_o3">Too early to tell<span class="sub">Still in treatment</span></span></button>
+      <button type="button" class="choice" data-v="No real change yet" data-v-mr="अजून विशेष फरक नाही"><span class="key">4</span><span data-i18n="q2_o4">No real change yet</span></button>
+    </div>
+    <div class="err" data-i18n="err_choice">Please choose one option.</div>
+  </section>
+
+  <!-- ============ 3 · SUB-RATINGS ============ -->
+  <section class="step" data-type="multirating" data-required="1">
+    <div class="q-num" data-i18n="q3_num">Question 3 of 6</div>
+    <h2 class="q" data-i18n="q3_q">How did she do on each of these?</h2>
+    <p class="help" data-i18n="q3_help">Three quick taps.</p>
+
+    <div class="sub-rate" data-key="explain">
+      <div class="lbl" data-i18n="q3_a">Explaining the condition and the plan</div>
+      <div class="stars" role="group" aria-label="Explanation rating">
+        <button type="button" class="star" data-v="1" aria-label="1 star">★</button>
+        <button type="button" class="star" data-v="2" aria-label="2 stars">★</button>
+        <button type="button" class="star" data-v="3" aria-label="3 stars">★</button>
+        <button type="button" class="star" data-v="4" aria-label="4 stars">★</button>
+        <button type="button" class="star" data-v="5" aria-label="5 stars">★</button>
+      </div>
+    </div>
+
+    <div class="sub-rate" data-key="punctual" style="margin-top:26px">
+      <div class="lbl" data-i18n="q3_b">Punctuality and reliability of visits</div>
+      <div class="stars" role="group" aria-label="Punctuality rating">
+        <button type="button" class="star" data-v="1" aria-label="1 star">★</button>
+        <button type="button" class="star" data-v="2" aria-label="2 stars">★</button>
+        <button type="button" class="star" data-v="3" aria-label="3 stars">★</button>
+        <button type="button" class="star" data-v="4" aria-label="4 stars">★</button>
+        <button type="button" class="star" data-v="5" aria-label="5 stars">★</button>
+      </div>
+    </div>
+
+    <div class="sub-rate" data-key="comfort" style="margin-top:26px">
+      <div class="lbl" data-i18n="q3_c">Care, patience and comfort during sessions</div>
+      <div class="stars" role="group" aria-label="Comfort rating">
+        <button type="button" class="star" data-v="1" aria-label="1 star">★</button>
+        <button type="button" class="star" data-v="2" aria-label="2 stars">★</button>
+        <button type="button" class="star" data-v="3" aria-label="3 stars">★</button>
+        <button type="button" class="star" data-v="4" aria-label="4 stars">★</button>
+        <button type="button" class="star" data-v="5" aria-label="5 stars">★</button>
+      </div>
+    </div>
+    <div class="err" data-i18n="err_three">Please rate all three before continuing.</div>
+  </section>
+
+  <!-- ============ 4 · RECOMMEND ============ -->
+  <section class="step" data-type="choice" data-key="recommend" data-required="1">
+    <div class="q-num" data-i18n="q4_num">Question 4 of 6</div>
+    <h2 class="q" data-i18n="q4_q">Would you recommend her to a friend or family member?</h2>
+    <div class="choices">
+      <button type="button" class="choice" data-v="Yes, definitely" data-v-mr="हो, नक्कीच"><span class="key">1</span><span data-i18n="q4_o1">Yes, definitely</span></button>
+      <button type="button" class="choice" data-v="Probably yes" data-v-mr="बहुतेक हो"><span class="key">2</span><span data-i18n="q4_o2">Probably yes</span></button>
+      <button type="button" class="choice" data-v="Not sure" data-v-mr="सांगता येत नाही"><span class="key">3</span><span data-i18n="q4_o3">Not sure</span></button>
+      <button type="button" class="choice" data-v="Probably not" data-v-mr="बहुतेक नाही"><span class="key">4</span><span data-i18n="q4_o4">Probably not</span></button>
+    </div>
+    <div class="err" data-i18n="err_choice2">Please choose one option.</div>
+  </section>
+
+  <!-- ============ 5 · WRITTEN FEEDBACK ============ -->
+  <section class="step" data-type="text" data-key="story">
+    <div class="q-num" data-i18n="q5_num">Question 5 of 6</div>
+    <h2 class="q" data-i18n="q5_q">In your own words, how did it help? <span class="opt">(optional)</span></h2>
+    <p class="help" data-i18n="q5_help">This is the part other families read. A few sentences is plenty.</p>
+    <div class="prompts">
+      <b data-i18n="q5_ph">Not sure what to write?</b>
+      <ul data-i18n="q5_pl">
+        <li>What could the patient not do before, that they can do now?</li>
+        <li>Roughly how long did it take to notice a change?</li>
+        <li>What was it like having treatment at home instead of at a clinic?</li>
+        <li>Anything she did that stood out?</li>
+      </ul>
+    </div>
+    <textarea id="story" maxlength="900" data-ph="q5_pf" placeholder="For example: my father could not stand without help after his stroke. After about six weeks of visits he walks to the balcony on his own..."></textarea>
+    <div class="counter"><span id="storyCount">0</span> / 900</div>
+  </section>
+
+  <!-- ============ 6 · IMPROVE SUGGESTION ============ -->
+  <section class="step" data-type="text" data-key="suggest">
+    <div class="q-num" data-i18n="q6_num">Question 6 of 6</div>
+    <h2 class="q" data-i18n="q6_q">Anything she could do better? <span class="opt">(optional)</span></h2>
+    <p class="help" data-i18n="q6_help">Only Dr. Amisha sees this. Small things count.</p>
+    <textarea id="suggest" maxlength="600" data-ph="q6_pf" placeholder="Timings, communication, home exercise instructions, payment — anything at all."></textarea>
+    <div class="counter"><span id="suggestCount">0</span> / 600</div>
+  </section>
+
+  <!-- ============ 7 · ABOUT YOU ============ -->
+  <section class="step" data-type="details">
+    <div class="q-num" data-i18n="q7_num">Almost done</div>
+    <h2 class="q" data-i18n="q7_q">A little about you</h2>
+    <p class="help" data-i18n="q7_help">Only your first name could ever appear publicly, and only if you say yes on the next screen.</p>
+
+    <div class="field">
+      <label class="fl" for="fname" data-i18n="q7_l1">Your name</label>
+      <input type="text" id="fname" autocomplete="name" data-ph="q7_p1" placeholder="e.g. Sunita M.">
+    </div>
+    <div class="field">
+      <label class="fl" for="cond" data-i18n="q7_l2">Condition treated <span class="opt">(optional)</span></label>
+      <input type="text" id="cond" data-ph="q7_p2" placeholder="e.g. post-stroke rehabilitation, knee replacement">
+    </div>
+    <div class="field" style="margin-bottom:0">
+      <label class="fl" for="area" data-i18n="q7_l3">Your area <span class="opt">(optional)</span></label>
+      <input type="text" id="area" data-ph="q7_p3" placeholder="e.g. Baner">
+    </div>
+  </section>
+
+  <!-- ============ 8 · CONSENT ============ -->
+  <section class="step" data-type="choice" data-key="consent" data-required="1">
+    <div class="q-num" data-i18n="q8_num">Last question</div>
+    <h2 class="q" data-i18n="q8_q">May she publish your feedback on her website?</h2>
+    <p class="help" data-i18n="q8_help">Either answer is fine and it won't change anything about your care.</p>
+    <div class="choices">
+      <button type="button" class="choice" data-v="YES — may publish with first name" data-v-mr="हो — पहिल्या नावासह प्रसिद्ध करू शकता"><span class="key">1</span><span data-i18n="q8_o1">Yes, with my first name<span class="sub">Shown as "Sunita M."</span></span></button>
+      <button type="button" class="choice" data-v="YES — may publish anonymously" data-v-mr="हो — पण नाव न देता"><span class="key">2</span><span data-i18n="q8_o2">Yes, but keep me anonymous<span class="sub">Shown as "A patient's family, Pune"</span></span></button>
+      <button type="button" class="choice" data-v="NO — private, for her only" data-v-mr="नाही — फक्त त्यांच्यासाठी"><span class="key">3</span><span data-i18n="q8_o3">No, this is just for her<span class="sub">Nothing will be published</span></span></button>
+    </div>
+    <div class="err" data-i18n="err_choice3">Please choose one option.</div>
+  </section>
+
+  <!-- ============ 9 · REVIEW & SEND ============ -->
+  <section class="step" data-type="send">
+    <div class="q-num" data-i18n="q9_num">Review before sending</div>
+    <h2 class="q" data-i18n="q9_q">Here's what will be sent</h2>
+    <p class="help" data-i18n="q9_help">Check it over. Tap "change" beside any answer to edit it.</p>
+    <div class="summary" id="summary"></div>
+    <div class="callout" data-i18n="q9_call">
+      <b>What happens next:</b> tapping the button opens WhatsApp with this message
+      already typed out. Nothing is sent until you press send inside WhatsApp yourself.
+    </div>
+    <div class="privacy">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7.5-3.6 7.5-9V5.6L12 3 4.5 5.6V12c0 5.4 7.5 9 7.5 9Z"/><path d="m9 12 2.1 2.1L15.4 10"/></svg>
+      <span data-i18n="q9_priv">No database, no tracking. Your answers stay in your browser until you send them.</span>
+    </div>
+  </section>
+
+  <!-- ============ 10 · DONE ============ -->
+  <section class="step" data-type="done">
+    <div class="done">
+      <div class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.6 4.6L19 7.5"/></svg></div>
+      <h2 data-i18n="d_h">Thank you, that really helps.</h2>
+      <p data-i18n="d_p">WhatsApp should have opened with your feedback ready to send. If it did not, use the box below instead.</p>
+      <div class="fallback">
+        <b data-i18n="d_fb">WhatsApp didn't open?</b>
+        <p data-i18n="d_fp">Copy this text and send it to her on WhatsApp or by email.</p>
+        <textarea id="copyBox" readonly aria-label="Your feedback text"></textarea>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">
+          <button type="button" class="btn" id="copyBtn" style="flex:0 0 auto" data-i18n="d_copy">Copy text</button>
+          <a class="btn btn-back" id="mailBtn" href="#" data-i18n="d_mail">Send by email</a>
+        </div>
+      </div>
+      <p style="margin-top:28px"><a href="index.html" data-i18n="d_back">&larr; Back to the website</a></p>
+    </div>
+  </section>
+
+</div>
+</main>
+
+<!-- ===================== NAV ===================== -->
+<div class="navbar" id="navbar">
+  <div class="inner">
+    <button type="button" class="btn btn-back" id="backBtn" style="display:none" data-i18n="nav_back">Back</button>
+    <button type="button" class="btn btn-primary" id="nextBtn">Start</button>
+    <button type="button" class="btn-skip" id="skipBtn" style="display:none" data-i18n="nav_skip">Skip</button>
+  </div>
+  <div class="hint" data-i18n="nav_hint">Tip: press <kbd>Enter</kbd> to continue, or number keys to pick an option</div>
+</div>
+
+<script>
+/* =================================================================
+   CONFIGURATION — EDIT THESE TWO LINES IF THEY EVER CHANGE
+   ================================================================= */
+var WHATSAPP_NUMBER = "919423886492";                    // country code + number, no + or spaces
+var HER_EMAIL       = "trajectory.neurorehab@gmail.com";
+/* ================================================================= */
+
+/* ---------- MARATHI ---------- */
+var MR = {
+  brandSub:'रुग्णांचा अभिप्राय',
+  backSite:'&larr; वेबसाइटवर परत',
+
+  w_num:'मदत केल्याबद्दल धन्यवाद',
+  w_q:'तुमची फिजिओथेरपी कशी वाटली?',
+  w_help:'सहा छोटे प्रश्न, साधारण दोन मिनिटं. बहुतेकांना एक टॅप पुरतो.<br><br>या पानावर काहीही साठवलं जात नाही आणि आपोआप कुठेही पाठवलं जात नाही. शेवटी तुम्ही लिहिलेलं सगळं तुम्हाला दिसेल, आणि ते डॉ. अमिषा यांना व्हॉट्सॲपवर पाठवायचं की नाही हे तुम्ही ठरवाल.',
+  w_ph:'याचा उपयोग काय',
+  w_pl:'<li>पुण्यातली इतर कुटुंबं घरी येऊन होणाऱ्या फिजिओथेरपीचा निर्णय घेताना हे अभिप्राय वाचतात</li>'+
+       '<li>काय चांगलं चाललं आहे आणि काय बदलायला हवं हे डॉ. अमिषा यांना कळतं</li>'+
+       '<li>तुमच्या स्पष्ट परवानगीशिवाय काहीही प्रसिद्ध केलं जात नाही</li>',
+
+  q1_num:'प्रश्न 1 / 6',
+  q1_q:'एकूण अनुभव तुम्ही कसा रेट कराल?',
+  q1_help:'एका ताऱ्यावर टॅप करा. एक म्हणजे वाईट, पाच म्हणजे उत्तम.',
+  poor:'वाईट', excellent:'उत्तम',
+  err_star:'पुढे जाण्यासाठी एका ताऱ्यावर टॅप करा.',
+
+  q2_num:'प्रश्न 2 / 6',
+  q2_q:'ज्या त्रासासाठी आलात, त्यात उपचारांनी फरक पडला का?',
+  q2_help:'खरं तेच सांगा. गोड उत्तरापेक्षा अचूक उत्तर जास्त उपयोगी पडतं.',
+  q2_o1:'हो, खूप फरक पडला',
+  q2_o2:'हो, थोडा फरक पडला',
+  q2_o3:'अजून सांगणं घाईचं होईल<span class="sub">उपचार अजून सुरू आहेत</span>',
+  q2_o4:'अजून विशेष फरक नाही',
+  err_choice:'कृपया एक पर्याय निवडा.',
+
+  q3_num:'प्रश्न 3 / 6',
+  q3_q:'या प्रत्येक गोष्टीत त्या कशा वाटल्या?',
+  q3_help:'तीन झटपट टॅप.',
+  q3_a:'आजार आणि उपचाराचा प्लॅन समजावून सांगणं',
+  q3_b:'वेळेवर येणं आणि भेटींची खात्री',
+  q3_c:'सेशनमधली काळजी, संयम आणि आराम',
+  err_three:'पुढे जाण्याआधी तिन्ही गोष्टींना रेटिंग द्या.',
+
+  q4_num:'प्रश्न 4 / 6',
+  q4_q:'मित्र किंवा नातेवाइकाला तुम्ही त्यांचं नाव सुचवाल का?',
+  q4_o1:'हो, नक्कीच', q4_o2:'बहुतेक हो', q4_o3:'सांगता येत नाही', q4_o4:'बहुतेक नाही',
+  err_choice2:'कृपया एक पर्याय निवडा.',
+
+  q5_num:'प्रश्न 5 / 6',
+  q5_q:'तुमच्या शब्दांत सांगा, याचा कसा उपयोग झाला? <span class="opt">(ऐच्छिक)</span>',
+  q5_help:'हाच भाग इतर कुटुंबं वाचतात. दोन-तीन वाक्यं पुरेशी आहेत.',
+  q5_ph:'काय लिहावं सुचत नाही?',
+  q5_pl:'<li>आधी रुग्णाला काय जमत नव्हतं, जे आता जमतं?</li>'+
+        '<li>फरक जाणवायला साधारण किती वेळ लागला?</li>'+
+        '<li>क्लिनिकऐवजी घरी उपचार होणं कसं वाटलं?</li>'+
+        '<li>त्यांनी केलेली एखादी गोष्ट विशेष लक्षात राहिली का?</li>',
+  q5_pf:'उदाहरणार्थ: स्ट्रोकनंतर माझे वडील आधाराशिवाय उभेही राहू शकत नव्हते. साधारण सहा आठवड्यांच्या भेटींनंतर ते स्वतःहून बाल्कनीपर्यंत चालत जातात...',
+
+  q6_num:'प्रश्न 6 / 6',
+  q6_q:'आणखी काय चांगलं करता येईल? <span class="opt">(ऐच्छिक)</span>',
+  q6_help:'हा भाग फक्त डॉ. अमिषा वाचतात. छोट्या गोष्टीही महत्त्वाच्या.',
+  q6_pf:'वेळा, संवाद, घरी करायच्या व्यायामाच्या सूचना, पैसे — काहीही.',
+
+  q7_num:'जवळपास झालं',
+  q7_q:'तुमच्याबद्दल थोडंसं',
+  q7_help:'फक्त तुमचं पहिलं नाव सार्वजनिक दिसू शकतं, आणि तेही तुम्ही पुढच्या पानावर हो म्हणालात तरच.',
+  q7_l1:'तुमचं नाव',
+  q7_l2:'कोणत्या आजारावर उपचार <span class="opt">(ऐच्छिक)</span>',
+  q7_l3:'तुमचा भाग <span class="opt">(ऐच्छिक)</span>',
+  q7_p1:'उदा. सुनीता म.',
+  q7_p2:'उदा. स्ट्रोकनंतरचं रिहॅब, गुडघा रिप्लेसमेंट',
+  q7_p3:'उदा. बाणेर',
+
+  q8_num:'शेवटचा प्रश्न',
+  q8_q:'तुमचा अभिप्राय त्या वेबसाइटवर प्रसिद्ध करू शकतात का?',
+  q8_help:'दोन्हीपैकी कोणतंही उत्तर ठीक आहे, आणि त्याने तुमच्या उपचारांत काहीही फरक पडणार नाही.',
+  q8_o1:'हो, माझ्या पहिल्या नावासह<span class="sub">"सुनीता म." असं दिसेल</span>',
+  q8_o2:'हो, पण नाव न देता<span class="sub">"एका रुग्णाचे कुटुंबीय, पुणे" असं दिसेल</span>',
+  q8_o3:'नाही, हे फक्त त्यांच्यासाठी<span class="sub">काहीही प्रसिद्ध केलं जाणार नाही</span>',
+  err_choice3:'कृपया एक पर्याय निवडा.',
+
+  q9_num:'पाठवण्याआधी एकदा बघा',
+  q9_q:'हे पाठवलं जाईल',
+  q9_help:'एकदा वाचून बघा. कोणतंही उत्तर बदलायचं असेल तर त्याच्या शेजारच्या "बदला"वर टॅप करा.',
+  q9_call:'<b>पुढे काय होईल:</b> बटणावर टॅप केल्यावर व्हॉट्सॲप उघडेल आणि हा मजकूर आधीच टाइप केलेला असेल. तुम्ही स्वतः व्हॉट्सॲपमध्ये सेंड दाबेपर्यंत काहीही पाठवलं जात नाही.',
+  q9_priv:'डेटाबेस नाही, ट्रॅकिंग नाही. तुम्ही पाठवेपर्यंत तुमची उत्तरं तुमच्याच ब्राउझरमध्ये राहतात.',
+
+  d_h:'धन्यवाद, याचा खरंच उपयोग होतो.',
+  d_p:'तुमचा अभिप्राय घेऊन व्हॉट्सॲप उघडलं असेल. उघडलं नसेल, तर खालची चौकट वापरा.',
+  d_fb:'व्हॉट्सॲप उघडलं नाही?',
+  d_fp:'हा मजकूर कॉपी करून त्यांना व्हॉट्सॲपवर किंवा ईमेलने पाठवा.',
+  d_copy:'मजकूर कॉपी करा',
+  d_mail:'ईमेलने पाठवा',
+  d_back:'&larr; वेबसाइटवर परत',
+
+  nav_back:'मागे', nav_skip:'वगळा',
+  nav_hint:'टीप: पुढे जाण्यासाठी <kbd>Enter</kbd>, किंवा पर्याय निवडण्यासाठी आकड्यांची बटणं'
+};
+
+/* Strings the script builds at run time. */
+var STR = {
+  en:{
+    start:"Start — it's 2 minutes", cont:'Continue', sendWa:'Send on WhatsApp',
+    pGetting:'Getting started', pMinutes:'2 minutes', pReview:'Review and send',
+    pLast:'Last step', pDone:'Complete', pThanks:'Thank you', pYours:'Your feedback',
+    pctDone:'% done', change:'change', blank:'(left blank)', notGiven:'(not given)',
+    copied:'Copied ✓', copyFail:'Select all and copy',
+    words:{1:'Poor',2:'Not great',3:'Okay',4:'Good',5:'Excellent'},
+    rows:{overall:'Overall rating',improve:'Improvement',explain:'Explanation',
+          punctual:'Punctuality',comfort:'Care & comfort',recommend:'Would recommend',
+          story:'In your words',suggest:'Could improve',fname:'Name',cond:'Condition',
+          area:'Area',consent:'Permission to publish'},
+    msg:{title:'*Feedback for Dr. Amisha Ghorpade*',overall:'Overall',improve:'Improvement',
+         recommend:'Would recommend',explain:'Explaining the plan',punctual:'Punctuality',
+         comfort:'Care & comfort',story:'*In their words:*',suggest:'*Could be better:*',
+         from:'From',cond:'Condition',area:'Area',consent:'Permission to publish',
+         nameless:'not given'},
+    mailSubject:'Patient feedback'
+  },
+  mr:{
+    start:'सुरू करा — दोन मिनिटं', cont:'पुढे', sendWa:'व्हॉट्सॲपवर पाठवा',
+    pGetting:'सुरुवात', pMinutes:'2 मिनिटं', pReview:'बघून पाठवा',
+    pLast:'शेवटची पायरी', pDone:'पूर्ण', pThanks:'धन्यवाद', pYours:'तुमचा अभिप्राय',
+    pctDone:'% झालं', change:'बदला', blank:'(रिकामं ठेवलं)', notGiven:'(दिलं नाही)',
+    copied:'कॉपी झालं ✓', copyFail:'सगळं निवडून कॉपी करा',
+    words:{1:'वाईट',2:'फार बरं नाही',3:'ठीक',4:'चांगलं',5:'उत्तम'},
+    rows:{overall:'एकूण रेटिंग',improve:'फरक',explain:'समजावून सांगणं',
+          punctual:'वेळेवर येणं',comfort:'काळजी आणि आराम',recommend:'नाव सुचवाल का',
+          story:'तुमच्या शब्दांत',suggest:'आणखी चांगलं करता येईल',fname:'नाव',cond:'आजार',
+          area:'भाग',consent:'प्रसिद्ध करण्याची परवानगी'},
+    msg:{title:'*डॉ. अमिषा घोरपडे यांच्यासाठी अभिप्राय*',overall:'एकूण',improve:'फरक',
+         recommend:'नाव सुचवाल का',explain:'प्लॅन समजावून सांगणं',punctual:'वेळेवर येणं',
+         comfort:'काळजी आणि आराम',story:'*त्यांच्या शब्दांत:*',suggest:'*आणखी चांगलं करता येईल:*',
+         from:'कडून',cond:'आजार',area:'भाग',consent:'प्रसिद्ध करण्याची परवानगी',
+         nameless:'दिलं नाही'},
+    mailSubject:'रुग्णाचा अभिप्राय'
+  }
+};
+
+var lang = 'en';
+function T(){ return STR[lang]; }
+
+/* ---------- STATE ---------- */
+var steps   = Array.prototype.slice.call(document.querySelectorAll('.step'));
+var cur     = 0;
+var data    = {};
+var nextBtn = document.getElementById('nextBtn');
+var backBtn = document.getElementById('backBtn');
+var skipBtn = document.getElementById('skipBtn');
+var pFill   = document.getElementById('pFill');
+var pStep   = document.getElementById('pStep');
+var pPct    = document.getElementById('pPct');
+
+/* ================= LANGUAGE ================= */
+var i18nNodes = [].slice.call(document.querySelectorAll('[data-i18n]'));
+var phNodes   = [].slice.call(document.querySelectorAll('[data-ph]'));
+var EN = {}, ENPH = {};
+i18nNodes.forEach(function(n){ EN[n.getAttribute('data-i18n')] = n.innerHTML; });
+phNodes.forEach(function(n){ ENPH[n.getAttribute('data-ph')] = n.getAttribute('placeholder'); });
+
+var langBtn = document.getElementById('langBtn');
+
+function applyLang(l, remember){
+  lang = (l === 'mr') ? 'mr' : 'en';
+  var mr = lang === 'mr';
+
+  i18nNodes.forEach(function(n){
+    var k = n.getAttribute('data-i18n');
+    n.innerHTML = (mr && MR[k]) ? MR[k] : EN[k];
+  });
+  phNodes.forEach(function(n){
+    var k = n.getAttribute('data-ph');
+    n.setAttribute('placeholder', (mr && MR[k]) ? MR[k] : ENPH[k]);
+  });
+
+  document.documentElement.lang = mr ? 'mr' : 'en';
+  document.body.classList.toggle('mr', mr);
+  langBtn.textContent = mr ? 'English' : 'मराठी';
+  langBtn.setAttribute('aria-label', mr ? 'Switch to English' : 'मराठीत बदला');
+
+  /* Re-record any already-chosen option in the new language. */
+  document.querySelectorAll('.step[data-type="choice"]').forEach(function(step){
+    var sel = step.querySelector('.choice.sel');
+    if (sel) data[step.getAttribute('data-key')] = valueOf(sel);
+  });
+
+  if (remember){ try{ localStorage.setItem('trj_lang', lang); }catch(e){} }
+  render();
+}
+
+function valueOf(btn){
+  return (lang === 'mr' && btn.getAttribute('data-v-mr')) ? btn.getAttribute('data-v-mr')
+                                                          : btn.getAttribute('data-v');
+}
+
+langBtn.addEventListener('click', function(){
+  applyLang(lang === 'mr' ? 'en' : 'mr', true);
+});
+
+/* ================= DARK MODE ================= */
+(function(){
+  var root = document.documentElement;
+  var btn  = document.getElementById('themeBtn');
+  function label(){
+    var dark = root.getAttribute('data-theme') === 'dark';
+    btn.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+    btn.setAttribute('title', dark ? 'Light mode' : 'Dark mode');
+    btn.setAttribute('aria-pressed', dark ? 'true' : 'false');
+  }
+  btn.addEventListener('click', function(){
+    var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try{ localStorage.setItem('trj_theme', next); }catch(e){}
+    label();
+  });
+  label();
+})();
+
+/* ================= STAR RATINGS ================= */
+document.querySelectorAll('.stars').forEach(function(group){
+  var holder  = group.closest('.sub-rate') || group.closest('.step');
+  var key     = holder.getAttribute('data-key');
+  var starEls = Array.prototype.slice.call(group.querySelectorAll('.star'));
+
+  starEls.forEach(function(star){
+    star.addEventListener('click', function(){
+      var v = parseInt(star.getAttribute('data-v'), 10);
+      data[key] = v;
+      starEls.forEach(function(s){
+        s.classList.toggle('lit', parseInt(s.getAttribute('data-v'),10) <= v);
+      });
+      var lbl = holder.querySelector('.rl');
+      if (lbl) lbl.textContent = T().words[v];
+      clearErr();
+      /* Single-rating steps advance on their own — it feels effortless. */
+      if (holder.getAttribute('data-type') === 'rating') setTimeout(go, 280);
+    });
+  });
+});
+
+/* ================= CHOICE BUTTONS ================= */
+document.querySelectorAll('.step[data-type="choice"]').forEach(function(step){
+  var key  = step.getAttribute('data-key');
+  var btns = Array.prototype.slice.call(step.querySelectorAll('.choice'));
+  btns.forEach(function(b){
+    b.addEventListener('click', function(){
+      btns.forEach(function(x){ x.classList.remove('sel'); });
+      b.classList.add('sel');
+      data[key] = valueOf(b);
+      clearErr();
+      setTimeout(go, 230);
+    });
+  });
+});
+
+/* ================= COUNTERS ================= */
+[['story','storyCount'],['suggest','suggestCount']].forEach(function(pair){
+  var ta  = document.getElementById(pair[0]);
+  var out = document.getElementById(pair[1]);
+  ta.addEventListener('input', function(){ out.textContent = ta.value.length; });
+});
+
+/* ================= VALIDATION ================= */
+function collect(step){
+  var type = step.getAttribute('data-type');
+  if (type === 'text'){
+    var k = step.getAttribute('data-key');
+    data[k] = document.getElementById(k).value.trim();
+  }
+  if (type === 'details'){
+    data.fname = document.getElementById('fname').value.trim();
+    data.cond  = document.getElementById('cond').value.trim();
+    data.area  = document.getElementById('area').value.trim();
+  }
+}
+
+function valid(step){
+  if (step.getAttribute('data-required') !== '1') return true;
+  var type = step.getAttribute('data-type');
+  if (type === 'rating' || type === 'choice') return !!data[step.getAttribute('data-key')];
+  if (type === 'multirating'){
+    return Array.prototype.slice.call(step.querySelectorAll('.sub-rate'))
+      .every(function(sr){ return !!data[sr.getAttribute('data-key')]; });
+  }
+  return true;
+}
+
+function clearErr(){
+  var e = steps[cur].querySelector('.err');
+  if (e) e.classList.remove('show');
+}
+
+/* ================= NAVIGATION ================= */
+function render(){
+  steps.forEach(function(s,i){ s.classList.toggle('active', i === cur); });
+  var step = steps[cur];
+  var type = step.getAttribute('data-type');
+  var t    = T();
+  var total = steps.length - 1;
+
+  pFill.style.width = Math.round((cur / total) * 100) + '%';
+
+  backBtn.style.display = (cur === 0 || type === 'done') ? 'none' : 'inline-flex';
+  skipBtn.style.display = (type === 'text') ? 'inline-block' : 'none';
+  document.getElementById('navbar').style.display = (type === 'done') ? 'none' : 'flex';
+
+  if (type === 'info'){
+    nextBtn.textContent = t.start; nextBtn.className = 'btn btn-primary';
+  } else if (type === 'send'){
+    nextBtn.textContent = t.sendWa; nextBtn.className = 'btn btn-primary btn-wa';
+  } else {
+    nextBtn.textContent = t.cont;  nextBtn.className = 'btn btn-primary';
+  }
+
+  if (type === 'info'){ pStep.textContent = t.pGetting; pPct.textContent = t.pMinutes; }
+  else if (type === 'send'){ pStep.textContent = t.pReview; pPct.textContent = t.pLast; }
+  else if (type === 'done'){ pStep.textContent = t.pDone; pPct.textContent = t.pThanks; pFill.style.width = '100%'; }
+  else { pStep.textContent = t.pYours; pPct.textContent = Math.round((cur / total) * 100) + t.pctDone; }
+
+  /* Keep the label under the overall stars in the right language. */
+  var rl = step.querySelector('.rl');
+  if (rl && data.overall) rl.textContent = t.words[data.overall];
+
+  window.scrollTo({top:0, behavior:'smooth'});
+  var f = step.querySelector('textarea, input[type=text]');
+  if (f && window.innerWidth > 560) setTimeout(function(){ f.focus(); }, 340);
+}
+
+function go(){
+  var step = steps[cur];
+  collect(step);
+
+  if (!valid(step)){
+    var e = step.querySelector('.err');
+    if (e) e.classList.add('show');
+    return;
+  }
+
+  if (step.getAttribute('data-type') === 'send'){ send(); return; }
+
+  cur++;
+  if (steps[cur].getAttribute('data-type') === 'send') buildSummary();
+  render();
+}
+
+function back(){
+  collect(steps[cur]);
+  if (cur > 0){ cur--; render(); }
+}
+
+nextBtn.addEventListener('click', go);
+backBtn.addEventListener('click', back);
+skipBtn.addEventListener('click', function(){
+  collect(steps[cur]);
+  cur++;
+  if (steps[cur].getAttribute('data-type') === 'send') buildSummary();
+  render();
+});
+
+/* Keyboard: Enter continues, number keys pick choices. */
+document.addEventListener('keydown', function(e){
+  var step = steps[cur];
+  var type = step.getAttribute('data-type');
+  var inField = /^(TEXTAREA|INPUT)$/.test(document.activeElement.tagName);
+
+  if (e.key === 'Enter' && type === 'text' && inField && e.ctrlKey){ e.preventDefault(); go(); return; }
+  if (e.key === 'Enter' && !(type === 'text' && inField) && !(type === 'details' && inField)){
+    e.preventDefault(); go(); return;
+  }
+  if (!inField && /^[1-5]$/.test(e.key)){
+    if (type === 'choice'){
+      var c = step.querySelectorAll('.choice')[parseInt(e.key,10) - 1];
+      if (c) c.click();
+    } else if (type === 'rating'){
+      var s = step.querySelector('.star[data-v="' + e.key + '"]');
+      if (s) s.click();
+    }
+  }
+});
+
+/* ================= SUMMARY ================= */
+function starStr(n){ n = n || 0; return '★★★★★'.slice(0, n) + '☆☆☆☆☆'.slice(0, 5 - n); }
+
+function buildSummary(){
+  var t = T(), R = t.rows;
+  var rows = [
+    [R.overall,   data.overall ? starStr(data.overall) + '  ' + t.words[data.overall] : '—', 1, true],
+    [R.improve,   data.improve || '—', 2],
+    [R.explain,   data.explain ? starStr(data.explain) : '—', 3, true],
+    [R.punctual,  data.punctual ? starStr(data.punctual) : '—', 3, true],
+    [R.comfort,   data.comfort ? starStr(data.comfort) : '—', 3, true],
+    [R.recommend, data.recommend || '—', 4],
+    [R.story,     data.story || t.blank, 5],
+    [R.suggest,   data.suggest || t.blank, 6],
+    [R.fname,     data.fname || t.notGiven, 7],
+    [R.cond,      data.cond || t.notGiven, 7],
+    [R.area,      data.area || t.notGiven, 7],
+    [R.consent,   data.consent || '—', 8]
+  ];
+
+  var box = document.getElementById('summary');
+  box.innerHTML = '';
+  rows.forEach(function(r){
+    var div = document.createElement('div'); div.className = 'row';
+    var b   = document.createElement('b');   b.textContent = r[0];
+    var sp  = document.createElement('span'); sp.textContent = r[1];
+    if (r[3]) sp.className = 'stars-out';
+    var ed = document.createElement('button');
+    ed.className = 'edit'; ed.type = 'button'; ed.textContent = t.change;
+    ed.addEventListener('click', function(){ cur = r[2]; render(); });
+    sp.appendChild(ed);
+    div.appendChild(b); div.appendChild(sp);
+    box.appendChild(div);
+  });
+}
+
+/* ================= MESSAGE + SEND ================= */
+function buildMessage(){
+  var m = T().msg, L = [];
+  L.push(m.title);
+  L.push('');
+  L.push(m.overall + ': ' + starStr(data.overall) + ' (' + (data.overall || '-') + '/5)');
+  L.push(m.improve + ': ' + (data.improve || '-'));
+  L.push(m.recommend + ': ' + (data.recommend || '-'));
+  L.push('');
+  L.push(m.explain  + ': ' + (data.explain  || '-') + '/5');
+  L.push(m.punctual + ': ' + (data.punctual || '-') + '/5');
+  L.push(m.comfort  + ': ' + (data.comfort  || '-') + '/5');
+  if (data.story)   { L.push(''); L.push(m.story);   L.push(data.story); }
+  if (data.suggest) { L.push(''); L.push(m.suggest); L.push(data.suggest); }
+  L.push('');
+  L.push(m.from + ': ' + (data.fname || m.nameless));
+  if (data.cond) L.push(m.cond + ': ' + data.cond);
+  if (data.area) L.push(m.area + ': ' + data.area);
+  L.push('');
+  L.push('*' + m.consent + ': ' + (data.consent || '-') + '*');
+  return L.join('\n');
+}
+
+function send(){
+  var msg = buildMessage();
+
+  document.getElementById('copyBox').value = msg;
+  document.getElementById('mailBtn').href =
+    'mailto:' + HER_EMAIL +
+    '?subject=' + encodeURIComponent(T().mailSubject + (data.fname ? ' — ' + data.fname : '')) +
+    '&body=' + encodeURIComponent(msg);
+
+  sent = true;                       /* stop the "are you sure you want to leave" warning */
+  cur = steps.length - 1;
+  render();
+
+  window.open('https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(msg), '_blank');
+}
+
+document.getElementById('copyBtn').addEventListener('click', function(){
+  var box = document.getElementById('copyBox');
+  var btn = this;
+  box.removeAttribute('readonly');
+  box.select(); box.setSelectionRange(0, box.value.length);
+  box.setAttribute('readonly','readonly');
+  var done = function(ok){ btn.textContent = ok ? T().copied : T().copyFail; };
+  if (navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(box.value).then(function(){ done(true); }, function(){
+      var ok = false; try{ ok = document.execCommand('copy'); }catch(e){}
+      done(ok);
+    });
+  } else {
+    var ok = false; try{ ok = document.execCommand('copy'); }catch(e){}
+    done(ok);
+  }
+});
+
+/* Warn before losing a part-filled form. */
+var sent = false;
+window.addEventListener('beforeunload', function(e){
+  var t = steps[cur].getAttribute('data-type');
+  if (cur > 0 && t !== 'done' && !sent){ e.preventDefault(); e.returnValue = ''; }
+});
+
+/* ================= START ================= */
+(function(){
+  var qs = (location.search.match(/[?&]lang=([a-z]{2})/i) || [])[1];
+  var saved = null;
+  try{ saved = localStorage.getItem('trj_lang'); }catch(e){}
+  var initial = qs || saved ||
+                (((navigator.language || '').toLowerCase().indexOf('mr') === 0) ? 'mr' : 'en');
+  applyLang(initial, false);   /* applyLang calls render() */
+})();
+</script>
+
+</body>
+</html>
