@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#101c1a" media="(prefers-color-scheme: dark)">
+
+<title>Spot the Stroke | Trajectory Neurorehabilitation</title>
+<meta name="description" content="A 3-minute game to learn the BE FAST warning signs of stroke, in English and Marathi. From Dr. Amisha Ghorpade, neuro physiotherapist in west Pune.">
+<meta name="author" content="Dr. Amisha Ghorpade">
+<meta property="og:site_name" content="Trajectory Neurorehabilitation">
+<meta property="og:title" content="Spot the Stroke: can you spot the warning signs?">
+<meta property="og:description" content="Five everyday moments in Pune. A 3-minute game in English and Marathi.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_IN">
+<meta property="og:locale:alternate" content="mr_IN">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none'%3E%3Ccircle cx='33.9' cy='14.9' r='8.8' stroke='%232f7d6f' stroke-width='1.5' opacity='.3'/%3E%3Cpath d='M7.9 39.4C15.4 39.4 24.9 34.9 33.9 14.9' stroke='%232f7d6f' stroke-width='2.6' stroke-linecap='round'/%3E%3Ccircle cx='7.9' cy='39.4' r='2.5' fill='%232f7d6f' opacity='.55'/%3E%3Ccircle cx='20.3' cy='34.6' r='3.1' fill='%232f7d6f' opacity='.8'/%3E%3Ccircle cx='33.9' cy='14.9' r='5.2' fill='%232f7d6f'/%3E%3C/svg%3E">
+
+<!-- Same theme memory as the main site, set before first paint. -->
+<script>
+(function(){
+  try{
+    var t = localStorage.getItem('trj_theme');
+    if (t !== 'dark' && t !== 'light'){
+      t = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    document.documentElement.setAttribute('data-theme', t);
+  }catch(e){}
+})();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ==================================================================
+   DESIGN TOKENS: the main site's palette, plus three game colours.
+   Red (--signal) is kept for one meaning only: call 108.
+   ================================================================== */
+:root{
+  --ink:#14302a; --ink-soft:#4b615c; --ink-faint:#5f7570;
+  --accent:#2f7d6f; --accent-strong:#1f5b50; --accent-ink:#1b5449;
+  --accent-soft:#eaf4f1; --accent-line:#bcdcd3; --gold:#8c611f;
+  --bg:#f5faf8; --surface:#ffffff; --surface-2:#ffffff;
+  --line:#dce8e4; --line-soft:#e8f0ed;
+  --btn-ink:#ffffff;
+  --shadow-sm:0 1px 2px rgba(20,48,42,.05);
+  --shadow-md:0 10px 30px rgba(20,48,42,.08);
+  --quiet:#eef3f1;
+  --panel:#14302a; --panel-ink:#ffffff; --panel-soft:#c7d8d3;
+  --panel-btn:#ffffff; --panel-btn-ink:#14302a;
+  --footer-bg:#14302a; --footer-ink:#c7d8d3;
+  --signal:#B8102C; --signal-ink:#8E0B21;
+  --danger-bg:#fdf1f0; --danger-line:#f3d5d1;
+  --wa:#075E54;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --deva:"Noto Sans Devanagari",Inter,"Nirmala UI",Mangal,sans-serif;
+}
+[data-theme="dark"]{
+  --ink:#f1f7f5; --ink-soft:#c2d3cd; --ink-faint:#97aca6;
+  --accent:#5cc0aa; --accent-strong:#8adcc8; --accent-ink:#8adcc8;
+  --accent-soft:#17322c; --accent-line:#33594f; --gold:#e2b66d;
+  --bg:#101c1a; --surface:#1b2c28; --surface-2:#213430;
+  --line:#2f443d; --line-soft:#253833;
+  --btn-ink:#04100d;
+  --shadow-sm:0 1px 2px rgba(0,0,0,.4);
+  --shadow-md:0 10px 30px rgba(0,0,0,.45);
+  --quiet:#16231f;
+  --panel:#213430; --panel-ink:#f1f7f5; --panel-soft:#c2d3cd;
+  --panel-btn:#5cc0aa; --panel-btn-ink:#04100d;
+  --footer-bg:#0b1614; --footer-ink:#c2d3cd;
+  --danger-bg:#2a1613; --danger-line:#4a251f;
+}
+@media (prefers-color-scheme: dark){
+  html:not([data-theme]){
+    --ink:#f1f7f5; --ink-soft:#c2d3cd; --ink-faint:#97aca6;
+    --accent:#5cc0aa; --accent-strong:#8adcc8; --accent-ink:#8adcc8;
+    --accent-soft:#17322c; --accent-line:#33594f; --gold:#e2b66d;
+    --bg:#101c1a; --surface:#1b2c28; --surface-2:#213430;
+    --line:#2f443d; --line-soft:#253833; --btn-ink:#04100d;
+    --quiet:#16231f; --panel:#213430; --panel-ink:#f1f7f5; --panel-soft:#c2d3cd;
+    --panel-btn:#5cc0aa; --panel-btn-ink:#04100d; --footer-bg:#0b1614; --footer-ink:#c2d3cd;
+    --danger-bg:#2a1613; --danger-line:#4a251f;
+  }
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-padding-top:16px;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{
+  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,
+              "Noto Sans Devanagari","Nirmala UI",Mangal,"Helvetica Neue",Arial,sans-serif;
+  color:var(--ink);background:var(--bg);line-height:1.65;font-size:17.5px;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+  min-height:100vh;display:flex;flex-direction:column;
+  transition:background-color .25s ease,color .25s ease;
+}
+[data-theme="dark"] body{-webkit-font-smoothing:auto;-moz-osx-font-smoothing:auto}
+body.mr{line-height:1.85}
+a{color:var(--accent-ink)}
+h1,h2,h3{font-family:var(--serif);font-weight:600}
+body.mr h1,body.mr h2,body.mr h3{font-family:var(--deva);font-weight:600;line-height:1.42}
+:focus-visible{outline:2.5px solid var(--accent);outline-offset:3px;border-radius:4px}
+.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+/* ---------- EMERGENCY BOX: small, below the content on every screen ---------- */
+.sos-wrap{width:100%;max-width:640px;margin:0 auto;padding:0 18px 36px}
+.sos-box{
+  display:flex;align-items:center;justify-content:space-between;gap:12px 14px;flex-wrap:wrap;
+  padding:14px 16px;border-radius:13px;
+  background:var(--danger-bg);border:1px solid var(--danger-line);
+}
+.sos-box__q{font-weight:600;font-size:.95rem;line-height:1.35;color:var(--ink)}
+.sos-box__alt{display:block;font-weight:400;font-size:.84rem;color:var(--ink-soft)}
+.sos-box__alt a{color:inherit;font-weight:600}
+.sos-call{
+  flex-shrink:0;display:inline-flex;align-items:center;gap:7px;
+  background:var(--signal);color:#fff;text-decoration:none;border-radius:999px;
+  padding:9px 18px;font-weight:700;font-size:.95rem;line-height:1.15;
+}
+.sos-call:hover{background:var(--signal-ink)}
+.sos-call svg{width:16px;height:16px}
+
+/* ---------- TOP BAR (same as the site's inner pages) ---------- */
+.topbar{
+  background:var(--surface);border-bottom:1px solid var(--line);
+  padding:12px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;
+}
+/* The wordmark, exactly as on the main site's header. It stays in English in both languages. */
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink);min-width:0}
+.brand .mark{width:40px;height:40px;color:var(--accent);flex-shrink:0}
+.bt{display:flex;flex-direction:column;line-height:1.1;min-width:0}
+.bt b{font-family:var(--serif);font-weight:600;font-size:1.08rem;letter-spacing:.055em;text-transform:uppercase;color:var(--ink-soft)}
+.bt span{font-size:.56rem;letter-spacing:.235em;text-transform:uppercase;color:var(--ink-faint);font-weight:600;margin-top:4px}
+.tools{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.icon-btn{
+  min-width:40px;height:40px;border-radius:10px;cursor:pointer;
+  background:var(--surface);border:1px solid var(--line);color:var(--ink-soft);
+  display:inline-flex;align-items:center;justify-content:center;font:inherit;
+  transition:background-color .18s,border-color .18s,color .18s;
+}
+.icon-btn:hover{background:var(--accent-soft);border-color:var(--accent-line);color:var(--accent-ink)}
+.icon-btn svg{width:18px;height:18px}
+#langBtn{padding:0 13px;font-size:.85rem;font-weight:600;white-space:nowrap}
+.icon-sun{display:none}
+.icon-moon{display:block}
+[data-theme="dark"] .icon-sun{display:block}
+[data-theme="dark"] .icon-moon{display:none}
+
+/* ---------- STAGE ---------- */
+main{flex:1;width:100%;max-width:640px;margin:0 auto;padding:30px 18px 32px}
+.screen.enter{animation:slideIn .32s ease}
+@keyframes slideIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.lead{font-size:1.1rem;color:var(--ink-soft);margin-top:14px}
+.note{font-size:.9rem;color:var(--ink-faint);margin-top:12px}
+.h1{font-size:1.75rem;line-height:1.22;letter-spacing:-.4px}
+.h2{font-size:1.2rem;line-height:1.35;margin:30px 0 12px}
+body.mr .h1{font-size:1.6rem}
+body.mr .h2{font-size:1.15rem}
+
+/* Buttons: the site's pill */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  border:1.5px solid var(--accent);border-radius:999px;padding:15px 28px;min-height:54px;
+  font:inherit;font-size:1rem;font-weight:600;line-height:1.2;text-align:center;
+  background:var(--accent);color:var(--btn-ink);text-decoration:none;cursor:pointer;
+  transition:background-color .18s,border-color .18s,transform .18s,box-shadow .18s;
+}
+.btn:hover{background:var(--accent-strong);border-color:var(--accent-strong);transform:translateY(-1px);box-shadow:var(--shadow-md)}
+.btn svg{width:18px;height:18px;flex-shrink:0}
+.btn-ghost{background:transparent;color:var(--accent-ink);border-color:var(--accent-line)}
+.btn-ghost:hover{background:var(--accent-soft);color:var(--accent-ink);border-color:var(--accent)}
+.btn-wa{background:var(--wa);border-color:var(--wa);color:#fff}
+.btn-wa:hover{background:#054d45;border-color:#054d45}
+.btn-block{width:100%}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.actions .btn{flex:1 1 220px}
+.textlink{
+  background:none;border:none;padding:8px 0;min-height:40px;font:inherit;font-size:.92rem;
+  color:var(--ink-faint);cursor:pointer;text-decoration:none;
+}
+.textlink:hover{color:var(--accent-ink)}
+
+/* ---------- INTRO ---------- */
+.intro__title{font-size:clamp(2.6rem,11vw,4.1rem);line-height:1.04;letter-spacing:-1px;margin-bottom:22px}
+body.mr .intro__title{font-size:clamp(2.3rem,10vw,3.5rem);line-height:1.3;letter-spacing:0}
+
+.byline{
+  display:flex;align-items:center;gap:12px;margin-top:30px;padding-top:20px;
+  border-top:1px solid var(--line);font-size:.9rem;color:var(--ink-soft);line-height:1.45;
+}
+.byline b{color:var(--ink);font-weight:600}
+.face{width:44px;height:44px;border-radius:50%;object-fit:cover;object-position:50% 18%;flex-shrink:0;background:var(--accent-soft)}
+
+/* ---------- THE BE FAST STRIP ---------- */
+.strip{list-style:none;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}
+.tile{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  aspect-ratio:4/5;padding:4px 2px;border-radius:13px;
+  border:1.5px solid var(--line);background:var(--surface);color:var(--ink-faint);
+}
+.tile__l{font-family:var(--serif);font-weight:600;font-size:clamp(2rem,9.5vw,3.2rem);line-height:1}
+.tile__w{font-size:clamp(.66rem,2.5vw,.82rem);font-weight:600;line-height:1.15;margin-top:5px;max-width:100%;overflow-wrap:anywhere;text-align:center}
+.tile.is-on{background:var(--accent);border-color:var(--accent);color:var(--btn-ink)}
+.tile--t.is-on{background:var(--signal);border-color:var(--signal);color:#fff}
+.strip--sm{gap:6px;margin:4px 0 22px}
+.strip--sm .tile{aspect-ratio:1;border-radius:10px}
+.strip--sm .tile:not(.is-on){border-style:dashed;border-color:var(--accent-line)}
+.strip--sm .tile__l{font-size:clamp(1.25rem,5.5vw,1.65rem)}
+.strip--sm .tile__w{display:none}
+.strip.is-animate .tile{animation:tileOn .45s ease-out both;animation-delay:calc(.3s + var(--i) * .16s)}
+.strip.is-animate .tile--t{animation-name:tileOnT}
+@keyframes tileOn{from{background:var(--surface);border-color:var(--line);color:var(--ink-faint)}}
+@keyframes tileOnT{from{background:var(--surface);border-color:var(--line);color:var(--ink-faint)}}
+.tile.is-fresh{animation:pop .5s ease-out}
+@keyframes pop{45%{transform:scale(1.16)}}
+
+/* ---------- GAME ---------- */
+.progress-meta{display:flex;justify-content:space-between;font-size:.8rem;color:var(--ink-faint);margin-bottom:7px;letter-spacing:.02em}
+.progress-track{height:5px;background:var(--line);border-radius:999px;overflow:hidden;margin-bottom:16px}
+.progress-fill{height:100%;background:var(--accent);border-radius:999px;transition:width .35s cubic-bezier(.4,0,.2,1)}
+.story{margin-top:10px;color:var(--ink-soft)}
+
+/* Option rows: the site's feedback-form "choice" */
+.opts{list-style:none;display:flex;flex-direction:column;gap:11px}
+.opt{
+  display:flex;align-items:flex-start;gap:15px;width:100%;
+  background:var(--surface);border:1.5px solid var(--line);border-radius:13px;
+  padding:15px 18px;min-height:56px;font:inherit;font-size:1rem;text-align:left;color:var(--ink);
+  cursor:pointer;transition:.16s;
+}
+.opt:hover:not(:disabled){border-color:var(--accent);background:var(--accent-soft)}
+.opt:disabled{cursor:default}
+.key{
+  width:27px;height:27px;flex-shrink:0;margin-top:1px;border-radius:8px;
+  background:var(--bg);border:1px solid var(--line);color:var(--btn-ink);
+  display:flex;align-items:center;justify-content:center;
+}
+.opt--radio .key{border-radius:50%}
+.key svg{width:16px;height:16px}
+.opt__body{display:block}
+.opt__text{display:block}
+.opt__tag{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin-top:6px;font-size:.86rem;font-weight:600}
+
+.opt.is-picked{border-color:var(--accent);background:var(--accent-soft);font-weight:600}
+.opt.is-picked .key{background:var(--accent);border-color:var(--accent)}
+.opt.is-hit{border-color:var(--accent);background:var(--accent-soft)}
+.opt.is-hit .key{background:var(--accent);border-color:var(--accent)}
+.opt.is-hit .opt__tag{color:var(--accent-ink)}
+.opt.is-miss{border-style:dashed;border-color:var(--gold)}
+.opt.is-miss .key{border-style:dashed;border-color:var(--gold);background:transparent}
+.opt.is-miss .opt__tag{color:var(--gold)}
+.opt.is-false{background:var(--quiet);border-color:var(--quiet);color:var(--ink-soft)}
+.opt.is-false .key{background:var(--ink-faint);border-color:var(--ink-faint);color:var(--bg)}
+.opt.is-quiet{color:var(--ink-faint)}
+
+.badge{display:inline-flex;align-items:center;gap:6px;color:var(--ink)}
+.badge__l{
+  display:inline-flex;align-items:center;justify-content:center;width:23px;height:23px;border-radius:6px;
+  background:var(--accent);color:var(--btn-ink);font-family:var(--serif);font-weight:600;font-size:.95rem;line-height:1;
+}
+.spot{margin-top:22px;font-weight:700;font-size:1.05rem}
+.spot:focus-visible{outline-offset:6px}
+
+.feedback{margin-top:20px;padding:22px;border-radius:16px;background:var(--panel);color:var(--panel-ink);box-shadow:var(--shadow-md)}
+[data-theme="dark"] .feedback{border:1px solid var(--accent-line)}
+.feedback__h{font-size:1.55rem;line-height:1.2}
+.feedback p{margin:8px 0 18px;color:var(--panel-soft)}
+.feedback .btn{width:100%;background:var(--panel-btn);border-color:var(--panel-btn);color:var(--panel-btn-ink)}
+.feedback .btn:hover{opacity:.92;box-shadow:none}
+.feedback__h:focus-visible,.feedback .btn:focus-visible{outline-color:var(--panel-ink)}
+
+/* ---------- SIGN LIST (learn + recap) ---------- */
+.signs{list-style:none;margin-top:18px}
+.sign{display:grid;grid-template-columns:48px 1fr;gap:15px;align-items:start;padding:15px 0;border-top:1px solid var(--line)}
+.sign:last-child{border-bottom:1px solid var(--line)}
+.sign__l{
+  display:flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:12px;
+  background:var(--accent-soft);border:1.5px solid var(--accent-line);color:var(--accent-ink);
+  font-family:var(--serif);font-weight:600;font-size:1.65rem;line-height:1;
+}
+.sign__l--t{background:var(--signal);border-color:var(--signal);color:#fff}
+.sign__h{font-family:Inter,sans-serif;font-size:1.05rem;font-weight:700;line-height:1.35}
+body.mr .sign__h{font-family:var(--deva)}
+.sign__en{font-weight:500;color:var(--ink-faint);font-size:.88rem;margin-left:6px;font-family:Inter,sans-serif}
+.sign p{color:var(--ink-soft);margin-top:2px}
+.other{
+  margin:20px 0 24px;padding:15px 18px;border-radius:13px;font-size:.95rem;
+  background:var(--surface);border:1px dashed var(--accent-line);color:var(--ink-soft);
+}
+.other b{color:var(--ink)}
+
+/* ---------- RESULTS ---------- */
+.res__title{font-size:clamp(2.1rem,8.5vw,3rem);line-height:1.12;letter-spacing:-.6px}
+body.mr .res__title{font-size:clamp(1.8rem,7.5vw,2.5rem);letter-spacing:0;line-height:1.38}
+.res__line{font-size:1.1rem;font-weight:600;margin-top:14px}
+.res__sub{color:var(--ink-soft);margin:4px 0 18px}
+.wait{list-style:none}
+.wait li{position:relative;padding:4px 0 4px 20px;color:var(--ink-soft)}
+.wait li::before{content:"";position:absolute;left:2px;top:.9em;width:7px;height:7px;border-radius:50%;background:var(--signal)}
+
+/* The one clinic mention at the end: quiet, personal, one link */
+.care{
+  display:flex;gap:16px;align-items:flex-start;margin-top:40px;padding:20px;border-radius:16px;
+  background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow-sm);
+}
+.care .face{width:56px;height:56px}
+.care h2{font-size:1.1rem;line-height:1.35;margin:0 0 6px}
+body.mr .care h2{font-size:1.05rem}
+.care p{color:var(--ink-soft);font-size:.95rem}
+.care a{display:inline-block;margin-top:10px;font-weight:600;font-size:.95rem;color:var(--accent-ink);text-underline-offset:3px}
+
+/* ---------- FOOTER (the site's footer, slimmed) ---------- */
+footer.site{background:var(--footer-bg);color:var(--footer-ink);font-size:.84rem;line-height:1.6}
+.foot__in{max-width:640px;margin:0 auto;padding:26px 18px 30px}
+.foot__brand{display:inline-flex;align-items:center;gap:10px;margin-bottom:12px;color:#fff;text-decoration:none}
+[data-theme="dark"] .foot__brand{color:var(--ink)}
+.foot__brand svg{width:32px;height:32px;color:#5cc0aa;flex-shrink:0}
+.foot__brand .bt b{color:inherit;font-size:1rem}
+.foot__brand .bt span{color:var(--footer-ink)}
+.foot__copy{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase}
+.foot__in p + p{margin-top:6px}
+footer.site a{color:inherit}
+
+@media (min-width:720px){
+  main{padding-top:44px}
+  .strip{gap:10px}
+}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none !important;transition:none !important}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brand" id="brandLink" href="https://trajectory-neurorehab.github.io/" aria-label="Trajectory Neurorehabilitation, home">
+    <svg class="mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="33.9" cy="14.9" r="8.8" stroke="currentColor" stroke-width="1.5" opacity=".3"/>
+      <path d="M7.9 39.4C15.4 39.4 24.9 34.9 33.9 14.9" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
+      <circle cx="7.9" cy="39.4" r="2.5" fill="currentColor" opacity=".55"/>
+      <circle cx="20.3" cy="34.6" r="3.1" fill="currentColor" opacity=".8"/>
+      <circle cx="33.9" cy="14.9" r="5.2" fill="currentColor"/>
+    </svg>
+    <span class="bt">
+      <b>Trajectory</b>
+      <span>Neurorehabilitation</span>
+    </span>
+  </a>
+  <div class="tools">
+    <button type="button" class="icon-btn" id="themeBtn" aria-label="Switch to dark mode" title="Dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.3A8.5 8.5 0 0 1 9.7 3.5a8.5 8.5 0 1 0 10.8 10.8Z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M4.3 4.3l1.6 1.6M18.1 18.1l1.6 1.6M2.6 12h2.2M19.2 12h2.2M4.3 19.7l1.6-1.6M18.1 5.9l1.6-1.6"/></svg>
+    </button>
+    <button type="button" class="icon-btn" id="langBtn">मराठी</button>
+  </div>
+</div>
+
+<main id="main">
+  <noscript><p>Please turn on JavaScript to play. If you see stroke signs right now, call 108.</p></noscript>
+</main>
+
+<div class="sos-wrap">
+  <aside class="sos-box" aria-label="Emergency">
+    <p class="sos-box__q"><span id="sosQ">Stroke signs right now?</span>
+      <span class="sos-box__alt"><span id="sosAlt">Any emergency:</span> <a href="tel:112">112</a></span></p>
+    <a class="sos-call" href="tel:108">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.2 3h3.4l1.7 4.3-2.1 1.3a12.4 12.4 0 0 0 5.9 5.9l1.3-2.1L20 14v3.5A2.5 2.5 0 0 1 17.4 20 15.4 15.4 0 0 1 4 6.6 2.5 2.5 0 0 1 5.2 3Z"/></svg>
+      <span id="sosCall">Call 108</span>
+    </a>
+  </aside>
+</div>
+
+<footer class="site">
+  <div class="foot__in">
+    <a class="foot__brand" id="footBrand" href="https://trajectory-neurorehab.github.io/" aria-label="Trajectory Neurorehabilitation, home">
+      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="33.9" cy="14.9" r="8.8" stroke="currentColor" stroke-width="1.5" opacity=".3"/>
+        <path d="M7.9 39.4C15.4 39.4 24.9 34.9 33.9 14.9" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
+        <circle cx="7.9" cy="39.4" r="2.5" fill="currentColor" opacity=".55"/>
+        <circle cx="20.3" cy="34.6" r="3.1" fill="currentColor" opacity=".8"/>
+        <circle cx="33.9" cy="14.9" r="5.2" fill="currentColor"/>
+      </svg>
+      <span class="bt">
+        <b>Trajectory</b>
+        <span>Neurorehabilitation</span>
+      </span>
+    </a>
+    <p id="disclaimer">This game is for learning only and can't diagnose a stroke. If you notice any of these signs, call 108 straight away.</p>
+    <p class="foot__copy">&copy; <span id="yr">2026</span> Trajectory Neurorehabilitation</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+
+  /* ------------------------------------------------------------------
+     SETTINGS
+     siteUrl: the main website. Change it if the clinic moves to its
+     own domain; links and Dr. Amisha's photo are taken from here.
+     ------------------------------------------------------------------ */
+  var CONFIG = {
+    siteUrl: 'https://trajectory-neurorehab.github.io/',
+    gameFile: 'spot-the-stroke.html'
+  };
+
+  var PHOTO = CONFIG.siteUrl + 'amisha.jpg';
+
+  /* ------------------------------------------------------------------
+     WORDS
+     Marathi follows the main site: Pune Marathi, with words people
+     really use in English (स्ट्रोक, रिहॅब, व्हॉट्सॲप) left as they are.
+     ------------------------------------------------------------------ */
+  var T = {
+    en: {
+      docTitle: 'Spot the Stroke | Trajectory Neurorehabilitation',
+      sosQ: 'Stroke signs right now?',
+      sosAlt: 'Any emergency:',
+      sosCall: 'Call 108',
+      langBtn: 'मराठी',
+      langAria: 'मराठीत बदला',
+      themeToDark: 'Switch to dark mode', themeToLight: 'Switch to light mode',
+      themeTitleDark: 'Dark mode', themeTitleLight: 'Light mode',
+      introTitle: 'Spot the stroke',
+      introLead: 'Five everyday moments in Pune. Can you spot the warning signs and make the right call?',
+      introTime: 'Takes about 3 minutes.',
+      byline: 'Made by <b>Dr. Amisha Ghorpade</b>, neuro physiotherapist, MPT (Neurosciences).',
+      start: 'Start the game',
+      learnFirst: 'Learn the signs first',
+      stripLabel: 'BE FAST: the warning signs of stroke',
+      stripCollectLabel: 'Letters you have spotted so far',
+      stripGot: 'spotted',
+      stripNot: 'not yet',
+      learnTitle: 'The signs, letter by letter',
+      learnIntro: 'Stroke signs come on suddenly. Remember BE FAST, and if you see even one sign, call 108.',
+      back: 'Back',
+      otherTitle: 'Also call 108 for',
+      otherText: 'a sudden, severe headache with no known cause, or sudden confusion.',
+      roundOf: 'Moment {n} of {t}',
+      tapPrompt: 'Tap every warning sign you notice.',
+      check: 'Check my answers',
+      spotted: 'You spotted {x} of {y} warning signs.',
+      tagHit: 'Warning sign',
+      tagMiss: 'You missed this one',
+      tagFalse: 'Not a stroke sign',
+      tagYours: 'Your choice',
+      tagRight: 'The right call',
+      actionQ: 'What do you do now?',
+      right: 'Right call.',
+      wrong: 'Not quite.',
+      next: 'Next moment',
+      finish: 'See my results',
+      resPerfect: "You'd know what to do.",
+      resPerfectSub: 'Now teach your family. It takes three minutes.',
+      resActions: "You'd make the right call.",
+      resActionsSub: 'Take another look at the signs you missed.',
+      resRetry: 'Worth another look.',
+      resRetrySub: "If you're ever unsure, call 108. It's always the right call.",
+      resLine: 'You spotted {x} of {y} warning signs and made {a} of {b} right calls.',
+      recapTitle: 'BE FAST, one more time',
+      waitTitle: 'While you wait for the ambulance',
+      wait: [
+        'Note the time the signs started, or when the person was last seen well.',
+        'Give nothing to eat or drink, not even water or tablets.',
+        'Stay with them. If they are drowsy or being sick, turn them onto their side.',
+        'Skip oil massage and home remedies. Every minute matters to the brain.'
+      ],
+      share: 'Share on WhatsApp',
+      shareMsg: 'Can you spot the signs of a stroke? Try this 3-minute game from Trajectory Neurorehabilitation, Pune:',
+      again: 'Play again',
+      careTitle: 'If someone you love is recovering from a stroke',
+      careBody: "I'm Dr. Amisha Ghorpade, a neuro physiotherapist. I visit people at home across west Pune and Pimpri-Chinchwad to work on sitting, standing, walking and using the affected hand after a stroke.",
+      careLink: 'How rehab at home works',
+      disclaimer: "This game is for learning only and can't diagnose a stroke. If you notice any of these signs, call 108 straight away."
+    },
+    mr: {
+      docTitle: 'स्ट्रोक ओळखा | Trajectory Neurorehabilitation',
+      sosQ: 'आत्ता स्ट्रोकची लक्षणे दिसताहेत?',
+      sosAlt: 'कोणत्याही आपत्कालीन स्थितीत:',
+      sosCall: '108 वर कॉल करा',
+      langBtn: 'English',
+      langAria: 'Switch to English',
+      themeToDark: 'डार्क मोड सुरू करा', themeToLight: 'लाइट मोड सुरू करा',
+      themeTitleDark: 'डार्क मोड', themeTitleLight: 'लाइट मोड',
+      introTitle: 'स्ट्रोक ओळखा',
+      introLead: 'पुण्यातल्या रोजच्या आयुष्यातले पाच प्रसंग. धोक्याची लक्षणे ओळखून तुम्ही योग्य निर्णय घेऊ शकाल का?',
+      introTime: 'सुमारे ३ मिनिटं लागतील.',
+      byline: '<b>डॉ. अमिषा घोरपडे</b>, न्यूरो फिजिओथेरपिस्ट, MPT (न्यूरोसायन्सेस) यांनी तयार केलेला खेळ.',
+      start: 'खेळ सुरू करा',
+      learnFirst: 'आधी लक्षणे शिका',
+      stripLabel: 'BE FAST: स्ट्रोकची धोक्याची लक्षणे',
+      stripCollectLabel: 'आतापर्यंत ओळखलेली अक्षरे',
+      stripGot: 'ओळखले',
+      stripNot: 'अजून नाही',
+      learnTitle: 'प्रत्येक अक्षराचा अर्थ',
+      learnIntro: 'स्ट्रोकची लक्षणे अचानक सुरू होतात. BE FAST लक्षात ठेवा, आणि एक जरी लक्षण दिसलं तरी 108 वर कॉल करा.',
+      back: 'मागे',
+      otherTitle: 'यासाठीही 108 वर कॉल करा:',
+      otherText: 'कारण नसताना अचानक खूप तीव्र डोकेदुखी, किंवा अचानक गोंधळल्यासारखं होणं.',
+      roundOf: 'प्रसंग {n} / {t}',
+      tapPrompt: 'तुमच्या लक्षात आलेलं प्रत्येक धोक्याचं लक्षण निवडा.',
+      check: 'उत्तरं तपासा',
+      spotted: 'तुम्ही {y} पैकी {x} लक्षणं ओळखली.',
+      tagHit: 'धोक्याचं लक्षण',
+      tagMiss: 'हे लक्षण राहून गेलं',
+      tagFalse: 'हे स्ट्रोकचं लक्षण नाही',
+      tagYours: 'तुमची निवड',
+      tagRight: 'योग्य निर्णय',
+      actionQ: 'आता तुम्ही काय कराल?',
+      right: 'योग्य निर्णय.',
+      wrong: 'थोडक्यात चुकलं.',
+      next: 'पुढचा प्रसंग',
+      finish: 'निकाल पाहा',
+      resPerfect: 'वेळ आली तर काय करायचं, हे तुम्हाला माहीत आहे.',
+      resPerfectSub: 'आता घरच्यांनाही शिकवा. फक्त तीन मिनिटं लागतात.',
+      resActions: 'तुम्ही योग्य निर्णय घ्याल.',
+      resActionsSub: 'राहून गेलेली लक्षणं पुन्हा एकदा पाहा.',
+      resRetry: 'पुन्हा एकदा पाहूया.',
+      resRetrySub: 'कधीही शंका आली तर 108 वर कॉल करा. तोच नेहमी योग्य निर्णय असतो.',
+      resLine: 'तुम्ही {y} पैकी {x} लक्षणं ओळखली आणि {b} पैकी {a} वेळा योग्य निर्णय घेतला.',
+      recapTitle: 'BE FAST, पुन्हा एकदा',
+      waitTitle: 'ॲम्ब्युलन्स येईपर्यंत',
+      wait: [
+        'लक्षणं कधी सुरू झाली, किंवा ती व्यक्ती शेवटची कधी व्यवस्थित होती, ती वेळ लिहून ठेवा.',
+        'खायला-प्यायला काहीही देऊ नका, अगदी पाणी किंवा गोळ्याही नाहीत.',
+        'त्यांच्यासोबत राहा. गुंगी येत असेल किंवा उलटी होत असेल, तर त्यांना कुशीवर वळवा.',
+        'तेल मालिश किंवा घरगुती उपाय करू नका. मेंदूसाठी प्रत्येक मिनिट महत्त्वाचं आहे.'
+      ],
+      share: 'व्हॉट्सॲपवर पाठवा',
+      shareMsg: 'स्ट्रोकची लक्षणं तुम्ही ओळखू शकता का? Trajectory Neurorehabilitation, पुणे यांचा हा ३ मिनिटांचा खेळ खेळून पाहा:',
+      again: 'पुन्हा खेळा',
+      careTitle: 'घरी कोणी स्ट्रोकमधून सावरत असेल तर',
+      careBody: 'मी डॉ. अमिषा घोरपडे, न्यूरो फिजिओथेरपिस्ट. स्ट्रोकनंतर बसणं, उभं राहणं, चालणं आणि हाताचा वापर यांवर काम करण्यासाठी मी पश्चिम पुणे आणि पिंपरी-चिंचवडमध्ये रुग्णांच्या घरी जाते.',
+      careLink: 'घरी रिहॅब कसं चालतं ते पाहा',
+      disclaimer: 'हा खेळ फक्त माहितीसाठी आहे; यावरून स्ट्रोकचं निदान करता येत नाही. यापैकी कोणतंही लक्षण दिसल्यास लगेच 108 वर कॉल करा.'
+    }
+  };
+
+  var ORDER = ['B', 'E', 'F', 'A', 'S', 'T'];
+  var LETTERS = {
+    en: {
+      B: ['Balance', 'Sudden loss of balance, dizziness or trouble walking.'],
+      E: ['Eyes', 'Sudden blurred or double vision, or loss of sight in one or both eyes.'],
+      F: ['Face', 'One side of the face droops. Ask them to smile.'],
+      A: ['Arms', 'One arm or leg goes weak or numb. Ask them to raise both arms.'],
+      S: ['Speech', 'Slurred or muddled words, or trouble understanding. Ask them to repeat a simple sentence.'],
+      T: ['Time', 'Call 108 at once and note the time the signs started.']
+    },
+    mr: {
+      B: ['तोल', 'अचानक तोल जाणं, चक्कर येणं किंवा चालताना अडखळणं.'],
+      E: ['डोळे', 'अचानक धूसर किंवा दोन-दोन दिसणं, किंवा एका किंवा दोन्ही डोळ्यांनी दिसेनासं होणं.'],
+      F: ['चेहरा', 'चेहऱ्याची एक बाजू खाली झुकते, तोंड वाकडं होतं. त्यांना हसायला सांगा.'],
+      A: ['हात', 'एक हात किंवा पाय अचानक कमजोर, बधीर किंवा लुळा पडतो. दोन्ही हात वर करायला सांगा.'],
+      S: ['बोलणं', 'बोलणं अस्पष्ट होतं, शब्द गोंधळतात किंवा बोललेलं समजत नाही. एखादं सोपं वाक्य पुन्हा म्हणायला सांगा.'],
+      T: ['वेळ', 'लगेच 108 वर कॉल करा आणि लक्षणं कधी सुरू झाली ती वेळ लक्षात ठेवा.']
+    }
+  };
+
+  /* ------------------------------------------------------------------
+     THE FIVE MOMENTS. sign = BE FAST letter; ok = the right action.
+     ------------------------------------------------------------------ */
+  var SCENES = [
+    {
+      title: { en: 'Aaji is making karanji for Diwali', mr: 'आजी दिवाळीच्या करंज्या करतेय' },
+      story: {
+        en: "It's the week before Diwali. Aaji has been in the kitchen since morning, shaping karanji for the faral. You go in to help and notice a few things.",
+        mr: 'दिवाळी एका आठवड्यावर आलीय. आजी सकाळपासून स्वयंपाकघरात फराळासाठी करंज्या करतेय. तुम्ही मदतीला जाता, तेव्हा काही गोष्टी तुमच्या लक्षात येतात.'
+      },
+      obs: [
+        { en: 'Her fingers are sticky with ghee', mr: 'तिची बोटं तुपाने चिकट झाली आहेत' },
+        { en: "A karanji slips from her right hand, and she can't lift that arm properly", mr: 'तिच्या उजव्या हातातून करंजी निसटते आणि तो हात तिला नीट उचलता येत नाही', sign: 'A' },
+        { en: 'She says the chakli needs more salt', mr: 'चकलीत मीठ कमी पडलंय, असं ती म्हणते' },
+        { en: 'When she smiles, the right side of her mouth droops', mr: 'ती हसते तेव्हा तोंडाची उजवी बाजू खाली झुकलेली दिसते', sign: 'F' },
+        { en: "She's been on her feet since 6 am", mr: 'ती सकाळी ६ वाजल्यापासून उभी आहे' },
+        { en: 'Her words come out slurred and muddled', mr: 'तिचं बोलणं अस्पष्ट आणि गोंधळलेलं आहे', sign: 'S' }
+      ],
+      acts: [
+        { en: 'Call 108 straight away and note the time', mr: 'लगेच 108 वर कॉल करा आणि वेळ लिहून ठेवा', ok: true },
+        { en: 'Sit her down with a glass of water and see if it passes', mr: 'तिला बसवून पाणी द्या आणि बरं वाटतंय का ते पाहा' },
+        { en: 'Call the family doctor when the clinic opens', mr: 'दवाखाना उघडल्यावर फॅमिली डॉक्टरांना फोन करा' }
+      ],
+      why: {
+        en: "Face, arm and speech changes coming on together are classic stroke signs. Call 108 at once, and don't give food or water: swallowing may be affected.",
+        mr: 'चेहरा, हात आणि बोलणं यांत एकाच वेळी अचानक बदल होणं ही स्ट्रोकची ठळक लक्षणं आहेत. लगेच 108 वर कॉल करा आणि खायला-प्यायला काहीही देऊ नका, कारण गिळण्यावर परिणाम झालेला असू शकतो.'
+      }
+    },
+    {
+      title: { en: 'Rohan, 38, in a meeting at Hinjewadi', mr: 'रोहन, ३८, हिंजवडीतल्या मीटिंगमध्ये' },
+      story: {
+        en: 'Your colleague Rohan is presenting on a long afternoon call. Halfway through, he stops talking and grips the edge of the desk.',
+        mr: 'तुमचा सहकारी रोहन दुपारच्या लांबलचक कॉलवर प्रेझेंटेशन देतोय. मध्येच तो बोलायचा थांबतो आणि टेबलाची कड घट्ट पकडतो.'
+      },
+      obs: [
+        { en: "He's had three coffees today", mr: 'आज त्याने तीन कॉफी घेतल्या आहेत' },
+        { en: "He says he's suddenly seeing double", mr: 'अचानक सगळं दोन-दोन दिसतंय, असं तो सांगतो', sign: 'E' },
+        { en: 'His shoulders are stiff after a long day at the desk', mr: 'दिवसभर डेस्कवर बसून त्याचे खांदे आखडले आहेत' },
+        { en: 'He tries to stand and nearly topples over', mr: 'तो उठायचा प्रयत्न करतो, पण तोल जाऊन पडता पडता वाचतो', sign: 'B' },
+        { en: 'He skipped lunch to meet a deadline', mr: 'डेडलाइनमुळे त्याचं दुपारचं जेवण चुकलंय' }
+      ],
+      acts: [
+        { en: 'Get him some water and a short break', mr: 'त्याला पाणी द्या आणि थोडी विश्रांती घ्यायला सांगा' },
+        { en: 'Book him a cab home so he can rest', mr: 'आराम करण्यासाठी त्याला घरी जायला कॅब बुक करून द्या' },
+        { en: 'Call 108 now and stay with him', mr: 'लगेच 108 वर कॉल करा आणि त्याच्यासोबत थांबा', ok: true }
+      ],
+      why: {
+        en: 'Sudden double vision and loss of balance are the B and E of BE FAST, signs the older FAST check can miss. Strokes can happen in your 30s too.',
+        mr: 'अचानक दोन-दोन दिसणं आणि तोल जाणं म्हणजे BE FAST मधले B आणि E. जुन्या FAST तपासणीत ही लक्षणं सुटू शकतात. तिशीतही स्ट्रोक येऊ शकतो.'
+      }
+    },
+    {
+      title: { en: 'Ajoba on his morning walk up Vetal Tekdi', mr: 'वेताळ टेकडीवर सकाळी फिरायला गेलेले आजोबा' },
+      story: {
+        en: 'You are walking with your grandfather. Near the top, he suddenly stops and sits down on a rock. Ten minutes later, he says he feels fine and wants to carry on.',
+        mr: 'तुम्ही आजोबांसोबत फिरायला गेला आहात. टेकडीच्या माथ्याजवळ ते अचानक थांबतात आणि एका दगडावर बसतात. दहा मिनिटांनी ते म्हणतात, ‘आता बरं वाटतंय, चला पुढे.’'
+      },
+      obs: [
+        { en: 'His knees creaked on the steep climb', mr: 'चढताना त्यांच्या गुडघ्यांतून कटकट आवाज येत होता' },
+        { en: 'His left arm suddenly went heavy and dropped to his side', mr: 'त्यांचा डावा हात अचानक जड होऊन खाली पडला', sign: 'A' },
+        { en: 'He stopped earlier to chat with his walking group', mr: 'त्याआधी ते फिरायच्या ग्रुपशी गप्पा मारायला थांबले होते' },
+        { en: 'The left side of his face looked droopy', mr: 'त्यांच्या चेहऱ्याची डावी बाजू खाली झुकलेली दिसली', sign: 'F' },
+        { en: 'His walking shoes are worn out', mr: 'त्यांचे बूट झिजले आहेत' }
+      ],
+      acts: [
+        { en: 'He feels fine now, so finish the walk', mr: 'आता बरं वाटतंय, तर फेरी पूर्ण करा' },
+        { en: 'Call 108, even though he feels fine', mr: 'बरं वाटत असलं तरी 108 वर कॉल करा', ok: true },
+        { en: 'Mention it at his next check-up', mr: 'पुढच्या तपासणीच्या वेळी डॉक्टरांना सांगा' }
+      ],
+      why: {
+        en: 'Stroke signs that go away may be a mini-stroke (TIA), a warning that a bigger stroke could follow. It still needs emergency care today.',
+        mr: 'निघून जाणारी लक्षणं म्हणजे ‘मिनी-स्ट्रोक’ (TIA) असू शकतो, जो मोठ्या स्ट्रोकची पूर्वसूचना असू शकतो. त्यासाठीही आजच तातडीचे उपचार हवेत.'
+      }
+    },
+    {
+      title: { en: 'Kaka at a wedding reception', mr: 'लग्नाच्या रिसेप्शनमध्ये काका' },
+      story: {
+        en: "It's a crowded evening on the lawns. Your uncle, who never drinks, suddenly starts acting strangely near the food counter. A cousin laughs that he's tired from dancing.",
+        mr: 'लॉनवर संध्याकाळची गर्दी आहे. कधीही दारू न पिणारे तुमचे काका अचानक जेवणाच्या काउंटरजवळ विचित्र वागू लागतात. एक भावंड हसून म्हणतं, ‘नाचून दमले असतील.’'
+      },
+      obs: [
+        { en: 'The DJ is painfully loud', mr: 'डीजेचा आवाज कानठळ्या बसवणारा आहे' },
+        { en: 'His speech is suddenly slurred', mr: 'त्यांचं बोलणं अचानक अस्पष्ट झालंय', sign: 'S' },
+        { en: 'He went back for a second helping of jalebi', mr: 'ते दुसऱ्यांदा जिलेबी घ्यायला गेले होते' },
+        { en: 'He staggers and grabs a chair to stay upright', mr: 'ते झोकांड्या खातात आणि आधारासाठी खुर्ची पकडतात', sign: 'B' },
+        { en: 'His new shoes are pinching', mr: 'नवे बूट त्यांना चावताहेत' }
+      ],
+      acts: [
+        { en: 'Sit him somewhere quiet until it passes', mr: 'बरं वाटेपर्यंत त्यांना शांत ठिकाणी बसवा' },
+        { en: 'Call 108 now, even if it feels like a fuss', mr: 'कोणी काहीही म्हणो, लगेच 108 वर कॉल करा', ok: true },
+        { en: 'Drive him home to sleep it off', mr: 'झोप काढण्यासाठी त्यांना गाडीने घरी न्या' }
+      ],
+      why: {
+        en: "Slurred speech and sudden unsteadiness are easy to blame on tiredness, heat or a drink. Don't guess. Call 108 and let the hospital tell the difference.",
+        mr: 'अस्पष्ट बोलणं आणि अचानक तोल जाणं याचं खापर थकवा, उष्णता किंवा दारूवर फोडणं सोपं असतं. अंदाज बांधू नका. 108 वर कॉल करा; नेमकं काय आहे ते हॉस्पिटलमध्येच कळेल.'
+      }
+    },
+    {
+      title: { en: 'Baba at 2 in the morning', mr: 'रात्री २ वाजता बाबा' },
+      story: {
+        en: "Your mother wakes you up. Your father got up for water and can't seem to manage. She says it's very late and you could take him to the clinic in the morning.",
+        mr: 'आई तुम्हाला उठवते. बाबा पाणी प्यायला उठले, पण त्यांना काहीच नीट जमत नाहीये. आई म्हणते, ‘खूप रात्र झालीय, सकाळी दवाखान्यात नेऊ.’'
+      },
+      obs: [
+        { en: "He can't lift his right arm, and his right leg drags", mr: 'त्यांना उजवा हात उचलता येत नाही आणि उजवा पाय ओढला जातो', sign: 'A' },
+        { en: 'The ceiling fan is rattling', mr: 'छताचा पंखा खडखड करतोय' },
+        { en: 'His mouth has gone crooked on one side', mr: 'त्यांचं तोंड एका बाजूला वाकडं झालंय', sign: 'F' },
+        { en: 'Street dogs are barking outside', mr: 'बाहेर रस्त्यावरची कुत्री भुंकताहेत' },
+        { en: "When he tries to call your mother, the words won't come out right", mr: 'आईला हाक मारायचा प्रयत्न करतात, पण शब्दच नीट फुटत नाहीत', sign: 'S' }
+      ],
+      acts: [
+        { en: 'Wait until the clinic opens in the morning', mr: 'सकाळी दवाखाना उघडेपर्यंत थांबा' },
+        { en: 'Massage his arm with warm oil and let him sleep', mr: 'हाताला कोमट तेलाने मालिश करून त्यांना झोपू द्या' },
+        { en: 'Call 108 now and say when he was last seen well', mr: 'लगेच 108 वर कॉल करा आणि ते शेवटचे कधी व्यवस्थित होते ते सांगा', ok: true }
+      ],
+      why: {
+        en: "Never wait for morning. If you don't know when the signs started, tell the ambulance team when he was last seen well, like when he went to bed. Oil massage won't help, and it costs precious time.",
+        mr: 'सकाळपर्यंत कधीही थांबू नका. लक्षणं कधी सुरू झाली हे माहीत नसेल, तर ते शेवटचे कधी व्यवस्थित होते (उदा. झोपायला गेले तेव्हा) ते ॲम्ब्युलन्समधल्या टीमला सांगा. तेल मालिशने फायदा होत नाही, उलट मौल्यवान वेळ वाया जातो.'
+      }
+    }
+  ];
+
+  var TOTAL_SIGNS = SCENES.reduce(function(n, s){ return n + s.obs.filter(function(o){ return o.sign; }).length; }, 0);
+
+  var ICON = {
+    check: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>',
+    cross: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></svg>',
+    wa: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.6a8.4 8.4 0 0 1-12.4 7.4L3.5 20.5l1.6-5A8.4 8.4 0 1 1 21 11.6Z"/></svg>'
+  };
+
+  /* ------------------------------------------------------------------
+     STATE
+     ------------------------------------------------------------------ */
+  function store(k, v){ try{ localStorage.setItem(k, v); }catch(e){} }
+  function read(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } }
+
+  function initialLang(){
+    try{
+      var p = new URLSearchParams(location.search).get('lang');
+      if (p === 'en' || p === 'mr') return p;
+    }catch(e){}
+    var saved = read('trj_lang');                 /* shared with the main site */
+    if (saved === 'en' || saved === 'mr') return saved;
+    if ((navigator.language || '').toLowerCase().indexOf('mr') === 0) return 'mr';
+    return 'en';
+  }
+
+  var state = {
+    lang: initialLang(),
+    screen: 'intro',
+    round: 0,
+    picked: {},
+    checked: false,
+    action: null,
+    found: 0,
+    rightCalls: 0,
+    collected: {},
+    fresh: {},
+    animateIntro: true,
+    enter: true          /* slide the screen in only when it changes, not on every tap */
+  };
+
+  function resetGame(){
+    state.round = 0; state.picked = {}; state.checked = false; state.action = null;
+    state.found = 0; state.rightCalls = 0; state.collected = {}; state.fresh = {};
+  }
+
+  /* ------------------------------------------------------------------
+     HELPERS
+     ------------------------------------------------------------------ */
+  var DEVA = '०१२३४५६७८९';
+  function t(key){ return T[state.lang][key]; }
+  function L(obj){ return obj[state.lang]; }
+  function num(n){ return state.lang === 'mr' ? String(n).replace(/[0-9]/g, function(d){ return DEVA[d]; }) : String(n); }
+  function fmt(s, vars){ return s.replace(/\{(\w+)\}/g, function(_, k){ return num(vars[k]); }); }
+  function word(k){ return LETTERS[state.lang][k][0]; }
+  function attr(s){ return String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;'); }
+
+  function gameUrl(){
+    var base = /^https?:$/.test(location.protocol) ? location.href.split('#')[0] : CONFIG.siteUrl + CONFIG.gameFile;
+    try{
+      var u = new URL(base);
+      u.searchParams.set('lang', state.lang);
+      return u.toString();
+    }catch(e){ return base; }
+  }
+
+  function face(cls){
+    return '<img class="face' + (cls ? ' ' + cls : '') + '" src="' + attr(PHOTO) + '" alt="" width="56" height="56" loading="lazy" onerror="this.remove()">';
+  }
+
+  /* ------------------------------------------------------------------
+     PIECES
+     ------------------------------------------------------------------ */
+  function strip(size, mode, animate){
+    var items = ORDER.map(function(k, i){
+      var on = mode === 'all' || !!state.collected[k];
+      var status = mode === 'collect' ? ', ' + (on ? t('stripGot') : t('stripNot')) : '';
+      var cls = 'tile' + (k === 'T' ? ' tile--t' : '') + (on ? ' is-on' : '') + (state.fresh[k] ? ' is-fresh' : '');
+      return '<li class="' + cls + '" style="--i:' + i + '">' +
+        '<span class="tile__l" aria-hidden="true">' + k + '</span>' +
+        '<span class="tile__w" aria-hidden="true">' + word(k) + '</span>' +
+        '<span class="sr">' + k + ', ' + word(k) + status + '</span></li>';
+    }).join('');
+    var label = mode === 'collect' ? t('stripCollectLabel') : t('stripLabel');
+    return '<ol class="strip strip--' + size + (animate ? ' is-animate' : '') + '" aria-label="' + attr(label) + '">' + items + '</ol>';
+  }
+
+  function badge(k){
+    return '<span class="badge"><span class="badge__l" aria-hidden="true">' + k + '</span><span>' + word(k) + '</span></span>';
+  }
+
+  function signList(level){
+    var items = ORDER.map(function(k){
+      var w = LETTERS[state.lang][k][0], text = LETTERS[state.lang][k][1];
+      var en = state.lang === 'mr' ? '<span class="sign__en" lang="en">' + LETTERS.en[k][0] + '</span>' : '';
+      return '<li class="sign">' +
+        '<span class="sign__l' + (k === 'T' ? ' sign__l--t' : '') + '" aria-hidden="true">' + k + '</span>' +
+        '<div><h' + level + ' class="sign__h"><span class="sr">' + k + ': </span>' + w + en + '</h' + level + '><p>' + text + '</p></div></li>';
+    }).join('');
+    return '<ol class="signs">' + items + '</ol>';
+  }
+
+  function obsItem(o, i){
+    var picked = !!state.picked[i], cls = '', icon = '', tag = '';
+    if (!state.checked){
+      if (picked){ cls = 'is-picked'; icon = ICON.check; }
+    } else if (o.sign && picked){
+      cls = 'is-hit'; icon = ICON.check; tag = '<span>' + t('tagHit') + '</span>' + badge(o.sign);
+    } else if (o.sign){
+      cls = 'is-miss'; tag = '<span>' + t('tagMiss') + '</span>' + badge(o.sign);
+    } else if (picked){
+      cls = 'is-false'; icon = ICON.cross; tag = '<span>' + t('tagFalse') + '</span>';
+    } else {
+      cls = 'is-quiet';
+    }
+    return '<li><button type="button" class="opt ' + cls + '" data-act="pick" data-i="' + i + '" aria-pressed="' + picked + '"' + (state.checked ? ' disabled' : '') + '>' +
+      '<span class="key" aria-hidden="true">' + icon + '</span>' +
+      '<span class="opt__body"><span class="opt__text">' + L(o) + '</span>' + (tag ? '<span class="opt__tag">' + tag + '</span>' : '') + '</span>' +
+      '</button></li>';
+  }
+
+  function actItem(a, i){
+    var answered = state.action !== null, chosen = state.action === i, cls = '', icon = '', tag = '';
+    if (answered){
+      if (a.ok){ cls = 'is-hit'; icon = ICON.check; tag = chosen ? t('tagYours') : t('tagRight'); }
+      else if (chosen){ cls = 'is-false'; icon = ICON.cross; tag = t('tagYours'); }
+      else { cls = 'is-quiet'; }
+    }
+    return '<li><button type="button" class="opt opt--radio ' + cls + '" data-act="act" data-i="' + i + '"' + (answered ? ' disabled' : '') + '>' +
+      '<span class="key" aria-hidden="true">' + icon + '</span>' +
+      '<span class="opt__body"><span class="opt__text">' + L(a) + '</span>' + (tag ? '<span class="opt__tag"><span>' + tag + '</span></span>' : '') + '</span>' +
+      '</button></li>';
+  }
+
+  function feedback(sc){
+    var ok = sc.acts[state.action].ok, last = state.round === SCENES.length - 1;
+    return '<div class="feedback">' +
+      '<h2 class="feedback__h" id="fb" tabindex="-1">' + (ok ? t('right') : t('wrong')) + '</h2>' +
+      '<p>' + L(sc.why) + '</p>' +
+      '<button class="btn" type="button" data-act="next">' + (last ? t('finish') : t('next')) + '</button></div>';
+  }
+
+  /* ------------------------------------------------------------------
+     SCREENS
+     ------------------------------------------------------------------ */
+  var screens = {
+    intro: function(){
+      return '<section class="screen" aria-labelledby="h-intro">' +
+        '<h1 class="intro__title" id="h-intro" tabindex="-1">' + t('introTitle') + '</h1>' +
+        strip('lg', 'all', state.animateIntro) +
+        '<p class="lead">' + t('introLead') + '</p>' +
+        '<div class="actions">' +
+          '<button class="btn" type="button" data-act="start">' + t('start') + '</button>' +
+          '<button class="btn btn-ghost" type="button" data-act="learn">' + t('learnFirst') + '</button>' +
+        '</div>' +
+        '<p class="note">' + t('introTime') + '</p>' +
+        '<p class="byline">' + face() + '<span>' + t('byline') + '</span></p>' +
+      '</section>';
+    },
+
+    learn: function(){
+      return '<section class="screen" aria-labelledby="h-learn">' +
+        '<button class="textlink" type="button" data-act="home">&larr; ' + t('back') + '</button>' +
+        '<h1 class="h1" id="h-learn" tabindex="-1">' + t('learnTitle') + '</h1>' +
+        '<p class="lead">' + t('learnIntro') + '</p>' +
+        signList(2) +
+        '<p class="other"><b>' + t('otherTitle') + '</b> ' + t('otherText') + '</p>' +
+        '<button class="btn btn-block" type="button" data-act="start">' + t('start') + '</button>' +
+      '</section>';
+    },
+
+    game: function(){
+      var sc = SCENES[state.round], after = '';
+      if (state.checked){
+        var signs = sc.obs.filter(function(o){ return o.sign; }).length;
+        var hits = sc.obs.filter(function(o, i){ return o.sign && state.picked[i]; }).length;
+        after = '<p class="spot" id="spot" tabindex="-1">' + fmt(t('spotted'), { x: hits, y: signs }) + '</p>' +
+          '<h2 class="h2" id="h-act">' + t('actionQ') + '</h2>' +
+          '<ul class="opts" aria-labelledby="h-act">' + sc.acts.map(actItem).join('') + '</ul>' +
+          (state.action !== null ? feedback(sc) : '');
+      }
+      var pct = Math.round((state.round + (state.action !== null ? 1 : 0)) / SCENES.length * 100);
+      return '<section class="screen" aria-labelledby="h-game">' +
+        '<div class="progress-meta"><span>' + fmt(t('roundOf'), { n: state.round + 1, t: SCENES.length }) + '</span><span>BE FAST</span></div>' +
+        '<div class="progress-track" aria-hidden="true"><div class="progress-fill" style="width:' + pct + '%"></div></div>' +
+        strip('sm', 'collect', false) +
+        '<h1 class="h1" id="h-game" tabindex="-1">' + L(sc.title) + '</h1>' +
+        '<p class="story">' + L(sc.story) + '</p>' +
+        '<h2 class="h2" id="h-obs">' + t('tapPrompt') + '</h2>' +
+        '<ul class="opts" aria-labelledby="h-obs">' + sc.obs.map(obsItem).join('') + '</ul>' +
+        (state.checked ? '' : '<button class="btn btn-block" type="button" data-act="check" style="margin-top:20px">' + t('check') + '</button>') +
+        after +
+      '</section>';
+    },
+
+    results: function(){
+      var allSigns = state.found === TOTAL_SIGNS, allCalls = state.rightCalls === SCENES.length;
+      var title = allSigns && allCalls ? t('resPerfect') : allCalls ? t('resActions') : t('resRetry');
+      var sub = allSigns && allCalls ? t('resPerfectSub') : allCalls ? t('resActionsSub') : t('resRetrySub');
+      var shareHref = 'https://wa.me/?text=' + encodeURIComponent(t('shareMsg') + ' ' + gameUrl());
+      var siteLink = CONFIG.siteUrl + (state.lang === 'mr' ? '?lang=mr' : '') + '#process';
+      return '<section class="screen" aria-labelledby="h-res">' +
+        '<h1 class="res__title" id="h-res" tabindex="-1">' + title + '</h1>' +
+        '<p class="res__line">' + fmt(t('resLine'), { x: state.found, y: TOTAL_SIGNS, a: state.rightCalls, b: SCENES.length }) + '</p>' +
+        '<p class="res__sub">' + sub + '</p>' +
+        strip('sm', 'collect', false) +
+        '<div class="actions">' +
+          '<a class="btn btn-wa" href="' + attr(shareHref) + '" target="_blank" rel="noopener">' + ICON.wa + '<span>' + t('share') + '</span></a>' +
+          '<button class="btn btn-ghost" type="button" data-act="again">' + t('again') + '</button>' +
+        '</div>' +
+        '<h2 class="h2">' + t('recapTitle') + '</h2>' +
+        signList(3) +
+        '<p class="other"><b>' + t('otherTitle') + '</b> ' + t('otherText') + '</p>' +
+        '<h2 class="h2">' + t('waitTitle') + '</h2>' +
+        '<ul class="wait">' + t('wait').map(function(w){ return '<li>' + w + '</li>'; }).join('') + '</ul>' +
+        '<aside class="care" aria-labelledby="h-care">' + face() +
+          '<div><h2 id="h-care">' + t('careTitle') + '</h2>' +
+          '<p>' + t('careBody') + '</p>' +
+          '<a href="' + attr(siteLink) + '">' + t('careLink') + '</a></div>' +
+        '</aside>' +
+      '</section>';
+    }
+  };
+
+  /* ------------------------------------------------------------------
+     RENDER + EVENTS
+     ------------------------------------------------------------------ */
+  function $(id){ return document.getElementById(id); }
+  var main = $('main'), langBtn = $('langBtn'), themeBtn = $('themeBtn'), root = document.documentElement;
+
+  function setText(id, key){ var el = $(id); if (el) el.textContent = t(key); }
+
+  function render(focusSel){
+    root.lang = state.lang;
+    document.body.classList.toggle('mr', state.lang === 'mr');
+    document.title = t('docTitle');
+    setText('sosQ', 'sosQ'); setText('sosAlt', 'sosAlt'); setText('sosCall', 'sosCall');
+    setText('disclaimer', 'disclaimer');
+    langBtn.textContent = t('langBtn');
+    langBtn.setAttribute('lang', state.lang === 'en' ? 'mr' : 'en');
+    langBtn.setAttribute('aria-label', t('langAria'));
+    var home = CONFIG.siteUrl + (state.lang === 'mr' ? '?lang=mr' : '');
+    $('brandLink').href = home; $('footBrand').href = home;
+    themeLabel();
+
+    main.innerHTML = screens[state.screen]();
+    if (state.enter && main.firstElementChild){ main.firstElementChild.classList.add('enter'); }
+    state.enter = false;
+    state.fresh = {};
+    if (state.screen === 'intro') state.animateIntro = false;
+    if (focusSel){ var el = main.querySelector(focusSel); if (el) el.focus(); }
+  }
+
+  function go(screen, focusSel){
+    state.screen = screen;
+    state.enter = true;
+    window.scrollTo(0, 0);
+    render(focusSel);
+  }
+
+  function togglePick(i, el){
+    state.picked[i] = !state.picked[i];
+    var on = state.picked[i];
+    el.classList.toggle('is-picked', on);
+    el.setAttribute('aria-pressed', String(on));
+    el.querySelector('.key').innerHTML = on ? ICON.check : '';
+  }
+
+  function check(){
+    var sc = SCENES[state.round];
+    state.checked = true;
+    sc.obs.forEach(function(o, i){
+      if (o.sign && state.picked[i]){
+        state.found++;
+        if (!state.collected[o.sign]){ state.collected[o.sign] = true; state.fresh[o.sign] = true; }
+      }
+    });
+    render('#spot');
+  }
+
+  function answer(i){
+    var sc = SCENES[state.round];
+    state.action = i;
+    if (sc.acts[i].ok){
+      state.rightCalls++;
+      if (!state.collected.T){ state.collected.T = true; state.fresh.T = true; }
+    }
+    render('#fb');
+  }
+
+  function next(){
+    state.round++;
+    state.picked = {}; state.checked = false; state.action = null;
+    if (state.round >= SCENES.length) go('results', '#h-res');
+    else go('game', '#h-game');
+  }
+
+  main.addEventListener('click', function(e){
+    var el = e.target.closest('[data-act]');
+    if (!el || el.disabled) return;
+    var i = Number(el.getAttribute('data-i'));
+    switch (el.getAttribute('data-act')){
+      case 'start':
+      case 'again': resetGame(); go('game', '#h-game'); break;
+      case 'learn': go('learn', '#h-learn'); break;
+      case 'home': go('intro', '#h-intro'); break;
+      case 'pick': if (!state.checked) togglePick(i, el); break;
+      case 'check': if (!state.checked) check(); break;
+      case 'act': if (state.action === null) answer(i); break;
+      case 'next': next(); break;
+    }
+  });
+
+  langBtn.addEventListener('click', function(){
+    state.lang = state.lang === 'en' ? 'mr' : 'en';
+    store('trj_lang', state.lang);                 /* the main site follows this choice */
+    store('trj_langAsked', '1');
+    render(null);
+  });
+
+  /* Dark mode, remembered with the main site's key */
+  var themeMeta = document.querySelector('meta[name="theme-color"]:not([media])');
+  function themeLabel(){
+    var dark = root.getAttribute('data-theme') === 'dark';
+    themeBtn.setAttribute('aria-label', dark ? t('themeToLight') : t('themeToDark'));
+    themeBtn.setAttribute('title', dark ? t('themeTitleLight') : t('themeTitleDark'));
+    themeBtn.setAttribute('aria-pressed', dark ? 'true' : 'false');
+    if (!themeMeta){
+      themeMeta = document.createElement('meta');
+      themeMeta.setAttribute('name', 'theme-color');
+      document.head.appendChild(themeMeta);
+    }
+    themeMeta.setAttribute('content', dark ? '#101c1a' : '#ffffff');
+  }
+  themeBtn.addEventListener('click', function(){
+    var nextTheme = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', nextTheme);
+    store('trj_theme', nextTheme);
+    themeLabel();
+  });
+  if (window.matchMedia){
+    var mq = window.matchMedia('(prefers-color-scheme: dark)');
+    var onChange = function(e){
+      var chosen = read('trj_theme');
+      if (chosen !== 'dark' && chosen !== 'light'){ root.setAttribute('data-theme', e.matches ? 'dark' : 'light'); themeLabel(); }
+    };
+    if (mq.addEventListener) mq.addEventListener('change', onChange);
+    else if (mq.addListener) mq.addListener(onChange);
+  }
+
+  $('yr').textContent = new Date().getFullYear();
+  render(null);
+})();
+</script>
+</body>
+</html>
